@@ -19,3 +19,7 @@
 ## 05: Search Product
 **Primary Actor:** Cashier  
 **Description:** The cashier searches for products by name, category, or barcode.
+
+## 07: Print Receipt
+**Primary Actor:** Cashier  
+**Description:** The system generates and prints a receipt after a successful transaction.

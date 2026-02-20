@@ -1,6 +1,6 @@
 # Iteration Plan (Inception Phase)
 
-## Iteration 1 – Inception (This is the Current Phase)
+## Iteration 1 – Inception (The is the Current Phase)
 
 ### Objectives
 - Define project scope
