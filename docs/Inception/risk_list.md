@@ -3,8 +3,7 @@
 ## Technical Risks
 R1: Lack of experience with POS system architecture.  
 R2: Integration challenges between modules (sales, inventory, reporting).  
-R3: Data security vulnerabilities.
-
+R3: Data security vulnerabilities.  
 R4: Incorrectly scanning of the product or gadget barcode.
 
 ## Business Risks
