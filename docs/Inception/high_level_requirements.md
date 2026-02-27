@@ -7,7 +7,8 @@ FR2: The system shall update inventory automatically after each sale.
 FR3: The system shall allow managers to add, edit, and delete products.  
 FR4: The system shall generate daily, weekly, and monthly sales reports.  
 FR5: The system shall manage user accounts and roles (Admin, Manager, Cashier).  
-FR6: The system shall allow product search by name, category, or barcode.
+FR6: The system shall allow product search by name, category, or barcode.  
+FR7: The gadget store system should be able to communicate with other systems.
 
 ## Non-Functional Requirements
 
