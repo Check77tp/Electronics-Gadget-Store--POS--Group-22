@@ -23,3 +23,5 @@
 ## 07: Print Receipt
 **Primary Actor:** Cashier  
 **Description:** The system generates and prints a receipt after a successful transaction.
+
+Samson
