@@ -104,6 +104,45 @@ def seed():
         session.add_all(suppliers.values())
         session.commit()
 
+        # --- Product images ---
+        # Real product photos from Wikimedia Commons (freely licensed, stable
+        # hosting) keyed by SKU, so the POS grid / Products / Inventory tables
+        # show an actual picture instead of the generic placeholder icon.
+        # Where the exact model/capacity/color isn't on Commons, the closest
+        # real photo of the same product line is used instead (noted inline).
+        PRODUCT_IMAGES = {
+            "PWR-65-ANK": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Anker-PowerPort-40W-5-Port-USB-Ladegeraet.jpg/500px-Anker-PowerPort-40W-5-Port-USB-Ladegeraet.jpg",
+            "PWR-ANK-100W-BLK": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Anker-PowerPort-40W-5-Port-USB-Ladegeraet.2.jpg/500px-Anker-PowerPort-40W-5-Port-USB-Ladegeraet.2.jpg",
+            "ACC-LOG-MX3S-GR": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logitech_MX_Master_3S_HS13.jpg/500px-Logitech_MX_Master_3S_HS13.jpg",
+            # Sony WH-1000XM3 photo -- XM5 isn't on Commons yet, same over-ear design family.
+            "AUD-SNY-XM5": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancelling-Kopfhoerer.jpg/500px-Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancelling-Kopfhoerer.jpg",
+            # Keychron K8 -- K2 isn't on Commons, same brand/wireless mechanical keyboard line.
+            "ACC-KCH-K2": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Keychron_K8_Non-Backlight_Wireless_Mechanical_Keyboard_%28closeup%29.jpg/500px-Keychron_K8_Non-Backlight_Wireless_Mechanical_Keyboard_%28closeup%29.jpg",
+            "KBD-KEY-Q1P-GR": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Keychron_K8_Non-Backlight_Wireless_Mechanical_Keyboard_-_52771896827.jpg/500px-Keychron_K8_Non-Backlight_Wireless_Mechanical_Keyboard_-_52771896827.jpg",
+            "TAB-SAM-S9": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Samsung_Galaxy_Tab_S9.png/500px-Samsung_Galaxy_Tab_S9.png",
+            "CBL-BLK-2M": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Black_charging_cable_type_USB-C_plugs_04.jpg/500px-Black_charging_cable_type_USB-C_plugs_04.jpg",
+            # Baseus-brand USB charger photo -- no Baseus power bank on Commons, same brand.
+            "PWR-BAS-20K": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Baseus_USB_chargers-0.jpg/500px-Baseus_USB_chargers-0.jpg",
+            # AirPods Pro 3rd-gen case photo -- 2nd gen isn't on Commons, same case design.
+            "AUD-APL-APP2": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/AirPods_Pro_3_with_case.jpg/500px-AirPods_Pro_3_with_case.jpg",
+            "STR-SND-1TB": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/SanDisk_Extreme_Portable_SSD_-_1TB%2C_USB-C_%2841036158305%29.jpg/500px-SanDisk_Extreme_Portable_SSD_-_1TB%2C_USB-C_%2841036158305%29.jpg",
+            # Same SN850X model line, 8TB variant photographed rather than 2TB.
+            "STR-WD-2TB": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Western_Digital_SN850X_NVME_solid_state_drive_8TB_front_side.jpg/500px-Western_Digital_SN850X_NVME_solid_state_drive_8TB_front_side.jpg",
+            # Samsung T7 Shield -- T9 isn't on Commons, same "Shield" rugged SSD line.
+            "STR-SAM-T9-2TB": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/SAMSUNG_PROTABLE_SSD_T7_SHIELD_4TB_LEFT_SIDE.jpg/500px-SAMSUNG_PROTABLE_SSD_T7_SHIELD_4TB_LEFT_SIDE.jpg",
+            "KBD-APL-MKBT-SLV": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Apple_Magic_Keyboard_-_US.jpg/500px-Apple_Magic_Keyboard_-_US.jpg",
+            # Apple Watch Ultra (Series 3 titanium case) -- Ultra 2 isn't on Commons, same design.
+            "AP-WT-UL49": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Apple_Watch_Ultra_Series_3_Natural_Titanium_Case.jpg/500px-Apple_Watch_Ultra_Series_3_Natural_Titanium_Case.jpg",
+            "PHN-APL-15P-128": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/IPhone_15_Pro_2024.jpg/500px-IPhone_15_Pro_2024.jpg",
+            "PHN-SAM-S24-256": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Samsung_Galaxy_S24%2C_Sperrbildschirm.JPG/500px-Samsung_Galaxy_S24%2C_Sperrbildschirm.JPG",
+            # Generic MagSafe charger photo -- no Belkin-branded one on Commons, same accessory type.
+            "PWR-BLK-3IN1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/MagSafe_and_USB-C_Cable_Charger_for_iPhone.jpg/500px-MagSafe_and_USB-C_Cable_Charger_for_iPhone.jpg",
+            # Logitech G35 -- G Pro X isn't on Commons, same brand/gaming headset category.
+            "GAM-LOG-GPX": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Logitech_G35_side_view.jpg/500px-Logitech_G35_side_view.jpg",
+            # Razer DeathAdder Elite -- V3 isn't on Commons, same iconic DeathAdder shape/line.
+            "GAM-RZR-DAV3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Razer_DeathAdder_Elite-front_oblique-ar_16to10-fs_PNr%C2%B00465.jpg/500px-Razer_DeathAdder_Elite-front_oblique-ar_16to10-fs_PNr%C2%B00465.jpg",
+        }
+
         # --- Products (name, brand, sku, barcode, category, supplier, cost, price, stock, reorder) ---
         # Data reused/extended from the Stitch POS Terminal, Inventory, and Product Catalog mockups.
         product_rows = [
@@ -141,6 +180,7 @@ def seed():
                 description=f"{brand} {name} -- reliable, in-demand electronics store stock.",
                 cost_price=cost,
                 price=price,
+                image_url=PRODUCT_IMAGES.get(sku),
                 category_id=categories[cat_name].id,
                 supplier_id=suppliers[sup_name].id,
             )
