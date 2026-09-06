@@ -122,7 +122,7 @@ export default function DashboardPage() {
 
           {/* RIGHT COLUMN */}
           <div className="xl:col-span-4 flex flex-col gap-space-lg min-w-0">
-            <QuickActions />
+            <QuickActions canViewManagerActions={canViewManagerWidgets} />
 
             {canViewManagerWidgets && (
               <LowStockAlerts

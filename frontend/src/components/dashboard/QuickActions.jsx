@@ -6,27 +6,33 @@
 import { Link } from 'react-router-dom';
 
 const ACTIONS = [
-  { to: '/pos', label: 'Open POS Terminal', hint: 'Start a new sale', icon: 'point_of_sale', style: 'primary' },
-  { to: '/inventory', label: 'Manage Inventory', hint: 'Stock & reorder levels', icon: 'inventory_2', style: 'default' },
-  { to: '/products', label: 'Add / Edit Products', hint: 'Catalog & pricing', icon: 'add_box', style: 'default' },
-  { to: '/reports', label: 'View Reports', hint: 'Sales & inventory analytics', icon: 'monitoring', style: 'default' },
+  { to: '/pos', label: 'Open POS Terminal', hint: 'Start a new sale', icon: 'point_of_sale', style: 'primary', managerOnly: false },
+  { to: '/inventory', label: 'Manage Inventory', hint: 'Stock & reorder levels', icon: 'inventory_2', style: 'default', managerOnly: true },
+  { to: '/products', label: 'Add / Edit Products', hint: 'Catalog & pricing', icon: 'add_box', style: 'default', managerOnly: true },
+  { to: '/reports', label: 'View Reports', hint: 'Sales & inventory analytics', icon: 'monitoring', style: 'default', managerOnly: true },
 ];
 
-export default function QuickActions() {
+// The other three tiles link to admin/manager-only actions (View Reports is a
+// hard 403 for a cashier; Manage Inventory / Add-Edit Products are read-only
+// for a cashier despite the label), so they're hidden for anyone who isn't an
+// admin/manager -- same gate DashboardPage already applies to its other
+// manager-only widgets.
+export default function QuickActions({ canViewManagerActions = false }) {
+  const actions = ACTIONS.filter((action) => !action.managerOnly || canViewManagerActions);
   return (
     <div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
       <span className="font-headline-sm text-headline-sm text-on-surface pb-space-sm">Quick Actions</span>
       <p className="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Jump straight to a task.</p>
       <div className="grid grid-cols-2 gap-space-sm">
-        {ACTIONS.map((action) => (
+        {actions.map((action) => (
           <Link
             key={action.to}
             to={action.to}
-            className={
+            className={`${actions.length === 1 ? 'col-span-2' : ''} ${
               action.style === 'primary'
                 ? 'flex flex-col p-space-md rounded-xl bg-primary-container text-on-primary shadow-sm hover:bg-primary transition-all group'
                 : 'flex flex-col p-space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all group'
-            }
+            }`}
           >
             <div
               className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform ${

@@ -13,7 +13,7 @@ function TableSkeleton() {
     <tbody className="divide-y divide-surface-container">
       {Array.from({ length: 6 }).map((_, i) => (
         <tr key={i} className="animate-pulse">
-          <td className="py-3 px-4" colSpan={11}>
+          <td className="py-3 px-4" colSpan={10}>
             <div className="h-8 bg-surface-container rounded" />
           </td>
         </tr>
@@ -36,15 +36,14 @@ export default function ProductsTable({ products, isLoading, isError, errorMessa
           <thead>
             <tr className="bg-surface-container-low text-on-surface-variant font-headline-sm text-[11px] uppercase tracking-wider select-none">
               <th className="py-3.5 px-4 font-semibold">Product Name &amp; Model</th>
-              <th className="py-3.5 px-3 font-semibold">SKU</th>
-              <th className="py-3.5 px-3 font-semibold">Barcode</th>
-              <th className="py-3.5 px-3 font-semibold">Category</th>
-              <th className="py-3.5 px-3 font-semibold">Brand</th>
-              <th className="py-3.5 px-3 font-semibold text-right">Cost</th>
-              <th className="py-3.5 px-3 font-semibold text-right">Price</th>
-              <th className="py-3.5 px-3 font-semibold text-right">Margin</th>
-              <th className="py-3.5 px-3 font-semibold text-right">Stock</th>
-              <th className="py-3.5 px-3 font-semibold text-center">Status</th>
+              <th className="py-3.5 px-2 font-semibold">SKU / Barcode</th>
+              <th className="py-3.5 px-2 font-semibold">Category</th>
+              <th className="py-3.5 px-2 font-semibold">Brand</th>
+              <th className="py-3.5 px-2 font-semibold text-right">Cost</th>
+              <th className="py-3.5 px-2 font-semibold text-right">Price</th>
+              <th className="py-3.5 px-2 font-semibold text-right">Margin</th>
+              <th className="py-3.5 px-2 font-semibold text-right">Stock</th>
+              <th className="py-3.5 px-2 font-semibold text-center">Status</th>
               <th className="py-3.5 px-4 font-semibold text-right">Actions</th>
             </tr>
           </thead>
@@ -73,17 +72,21 @@ export default function ProductsTable({ products, isLoading, isError, errorMessa
                         </div>
                       </div>
                     </td>
-                    <td className="py-3 px-3 font-label-code text-label-code text-on-surface-variant">{product.sku}</td>
-                    <td className="py-3 px-3 font-label-code text-label-code text-on-surface">{product.barcode}</td>
-                    <td className="py-3 px-3 text-on-surface-variant">{product.category?.name || '--'}</td>
-                    <td className="py-3 px-3 font-semibold text-on-surface">{product.brand || '--'}</td>
-                    <td className="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+                    <td className="py-3 px-2 font-label-code text-label-code">
+                      <div className="flex flex-col">
+                        <span className="text-on-surface">{product.sku}</span>
+                        <span className="text-[10px] text-on-surface-variant">{product.barcode}</span>
+                      </div>
+                    </td>
+                    <td className="py-3 px-2 text-on-surface-variant">{product.category?.name || '--'}</td>
+                    <td className="py-3 px-2 font-semibold text-on-surface">{product.brand || '--'}</td>
+                    <td className="py-3 px-2 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
                       {formatMoney(product.cost_price)}
                     </td>
-                    <td className="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">
+                    <td className="py-3 px-2 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">
                       {formatMoney(product.price)}
                     </td>
-                    <td className="py-3 px-3 text-right">
+                    <td className="py-3 px-2 text-right">
                       {margin === null ? (
                         <span className="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">--</span>
                       ) : (
@@ -96,10 +99,10 @@ export default function ProductsTable({ products, isLoading, isError, errorMessa
                         </span>
                       )}
                     </td>
-                    <td className="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">
+                    <td className="py-3 px-2 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">
                       {product.inventory ? product.inventory.stock_quantity : '--'}
                     </td>
-                    <td className="py-3 px-3 text-center">
+                    <td className="py-3 px-2 text-center">
                       <StockStatusBadge product={product} />
                     </td>
                     <td className="py-3 px-4 text-right">
