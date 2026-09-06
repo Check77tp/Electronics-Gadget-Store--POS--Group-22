@@ -1,0 +1,22 @@
+# --- Backend (Python / FastAPI) ---
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+backend/gadgetpos.db
+backend/gadgetpos.db-wal
+backend/gadgetpos.db-shm
+backend/gadgetpos.log
+backend/.env
+
+# --- Frontend (React / Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# --- Editor / OS cruft ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
