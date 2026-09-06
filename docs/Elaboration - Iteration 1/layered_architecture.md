@@ -1,70 +1,59 @@
-# Layered Architecture – Electronics/Gadgets POS System
+# Layered Architecture — Electronics/Gadgets POS System
 
-The system follows a layered architecture where responsibilities are divided into separate layers. Each layer performs specific functions and interacts with adjacent layers.
+*Elaboration Iteration 1 deliverable: architectural proof-of-concept.*
 
----
+## Technology Stack
 
-# 1. UI Layer
+- **UI:** React (single-page app)
+- **Backend:** Python, exposed to the UI as a REST API
+- **Style:** one deployable backend, internally organized into strict layers, communicating with the React UI over HTTP/REST
 
-**Purpose**
+## Layer 1: UI Layer
 
-Handles all user interactions with the system. This layer collects user input and displays system outputs.
+**Purpose:** Handles all user interaction — collects input and displays output. Implemented as a React single-page application that talks to the backend only through the REST API (it does not call the Domain layer directly).
 
-**Components**
-
-- POS Sales Interface
+**Components:**
+- Sales Interface (checkout/POS screen)
 - Product Management Interface
 - Inventory Management Interface
 - Reporting Dashboard
-- Login Interface
 
----
+## Layer 2: Domain Layer
 
-# 2. Application Logic / Domain Layer
+**Purpose:** Contains the core business logic and business rules. Receives requests from the UI layer (via controllers) and coordinates the objects from the domain model (see `domain_model.md`) to fulfill them.
 
-**Purpose**
-
-Contains the core business logic and business rules of the system. It processes requests from the UI layer and coordinates system operations.
-
-**Components**
-
-- Sales Processing Module
-- Transaction Management
-- Product Management
-- Inventory Management
-- Pricing and Calculation Service
+**Components:**
+- Sale, Product, Product Type, Inventory, Receipt, Tax — domain concepts with behavior (see `design_class_diagram.md` for their methods)
+- Authorization Controller — GRASP Controller for login/permission checks
+- Price Calculation Service
+- Product Search and Filtering Service
 - Reporting and Analytics Module
 - User Management Module
-- Authentication and Authorization Controller
-- Product Search and Filtering Service
-- Notification and Alert Controller
+- POS Rule Engine — business rules (e.g. discount eligibility, tax rates, low-stock thresholds)
+- Payment — with **bank payment** and **credit payment** variants behind an `<<interface>> iCreditAuthorizationService`, so a new payment method can be added without changing the Sale logic that uses it
 
----
+## Layer 3: Business Infrastructure
 
-# 3. Technical Services Layer
+**Purpose:** General-purpose, low-level business services that are not specific to POS/retail and could be reused across many business domains (Larman's "Business Infrastructure" layer). This layer isolates the Domain layer from the details of third-party integrations.
 
-**Purpose**
+**Components:**
+- CurrencyConverter
+- External APIs: PaymentGatewayAPI, SMSServiceAPI, EmailAPI (these back FR7 — communication with external systems for online payment and notifications)
 
-Provides supporting technical services required by the application logic layer. These services handle infrastructure-related operations.
+## Layer 4: Technical Services
 
-**Components**
+**Purpose:** Cross-cutting infrastructure services used by every other layer.
 
-- Database Access Service
+**Components:**
+- Persistence (database access — this is where all data storage responsibilities live)
 - Authentication Service
-- Logging Service
-- Notification Service
+- Security
+- Logging
+- Notification
 
----
+## Why a Layered Architecture
 
-# 4. Data Storage Layer
-
-**Purpose**
-
-Stores persistent data used by the system.
-
-**Components**
-
-- Product Database
-- Sales Transaction Records
-- User Accounts Database
-- System Logs
+- **Separation of concerns:** UI changes (e.g. redesigning the checkout screen) don't touch business rules; business rule changes don't touch persistence.
+- **Testability:** the Domain layer can be unit-tested without a UI or a real database.
+- **Matches the reference case study:** this mirrors the layered architecture used in Larman's POS case study, directly addressing risk R1 (lack of team experience with POS architecture) from the risk list.
+- **Supports NFR6 (online/offline operation):** because Persistence and the External APIs are isolated behind their own layers, the Domain layer can be designed to queue sales locally and sync to the External APIs layer when connectivity returns, without changing sales-processing logic.
