@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Modal from '../common/Modal';
 import { getErrorMessage } from '../../api/client';
+import { formatMoney } from '../../utils/currency';
 
 // Add/Edit Product modal, ported from project_management_catalog_code.html's
 // "#productModal" (tabbed Basic Info / Pricing & Inventory / Supplier form).
@@ -323,9 +324,9 @@ export default function ProductFormModal({ open, onClose, product, categories, s
                 </span>
                 <div className="grid grid-cols-2 gap-space-md">
                   <div className="flex flex-col gap-1">
-                    <label className={labelBase}>Cost Price ($)</label>
+                    <label className={labelBase}>Cost Price (K)</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-3 font-label-numeric-sm text-on-surface-variant">$</span>
+                      <span className="absolute left-3 font-label-numeric-sm text-on-surface-variant">K</span>
                       <input
                         className="w-full pl-7 pr-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-semibold text-on-surface outline-none focus:ring-2 focus:ring-primary"
                         type="number"
@@ -339,10 +340,10 @@ export default function ProductFormModal({ open, onClose, product, categories, s
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className={labelBase}>
-                      Selling Price ($) <span className="text-error">*</span>
+                      Selling Price (K) <span className="text-error">*</span>
                     </label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-3 font-label-numeric-sm text-on-surface-variant">$</span>
+                      <span className="absolute left-3 font-label-numeric-sm text-on-surface-variant">K</span>
                       <input
                         className="w-full pl-7 pr-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-bold text-on-surface outline-none focus:ring-2 focus:ring-primary"
                         type="number"
@@ -359,7 +360,7 @@ export default function ProductFormModal({ open, onClose, product, categories, s
                   <div>
                     <span className="font-label-code text-[11px] uppercase text-on-surface-variant block">Gross Profit</span>
                     <span className={`font-label-numeric-sm text-label-numeric-sm font-bold ${hasMargin && marginProfit >= 0 ? 'text-emerald-600' : 'text-error'}`}>
-                      {hasMargin ? `${marginProfit >= 0 ? '+' : ''}$${marginProfit.toFixed(2)} / unit` : '--'}
+                      {hasMargin ? `${marginProfit >= 0 ? '+' : ''}${formatMoney(marginProfit)} / unit` : '--'}
                     </span>
                   </div>
                   <div className="text-right">

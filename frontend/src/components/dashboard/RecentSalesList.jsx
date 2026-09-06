@@ -4,6 +4,7 @@
 // full filterable table -- that table already lives at /sales.
 
 import { Link } from 'react-router-dom';
+import { formatMoney } from '../../utils/currency';
 
 const STATUS_STYLES = {
   completed: 'bg-emerald-50 text-emerald-700',
@@ -16,10 +17,6 @@ const STATUS_DOTS = {
   pending: 'bg-amber-500',
   cancelled: 'bg-outline',
 };
-
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
-}
 
 function formatTime(iso) {
   if (!iso) return '--';

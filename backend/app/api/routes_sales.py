@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, Response
 from sqlmodel import Session
 
 from app.business_infrastructure.payment_gateway import get_payment_service
+from app.config import CURRENCY_SYMBOL
 from app.domain.controllers.sales_controller import SalesController
 from app.domain.models import Sale, UserAccount
 from app.domain.schemas import PayRequest, SaleCreateRequest, SaleRead
@@ -168,6 +169,10 @@ def get_receipt_text(
     controller = SalesController(session, get_payment_service())
     sale = controller.get_sale(sale_id)
 
+    def money(amount: float) -> str:
+        sign = "-" if amount < 0 else ""
+        return f"{sign}{CURRENCY_SYMBOL}{abs(amount):,.2f}"
+
     lines = [
         "========================================",
         "            GadgetPOS Receipt",
@@ -179,20 +184,20 @@ def get_receipt_text(
         "----------------------------------------",
     ]
     for li in sale.line_items:
-        lines.append(f"{li.product_name_snapshot[:24]:<24} x{li.quantity:<3} {li.subtotal:>8.2f}")
+        lines.append(f"{li.product_name_snapshot[:24]:<24} x{li.quantity:<3} {money(li.subtotal):>9}")
     lines += [
         "----------------------------------------",
-        f"{'Subtotal':<28}{sale.subtotal:>10.2f}",
-        f"{'Discount':<28}{-sale.discount_amount:>10.2f}",
-        f"{'Tax':<28}{sale.tax_amount:>10.2f}",
-        f"{'TOTAL':<28}{sale.total_amount:>10.2f}",
+        f"{'Subtotal':<28}{money(sale.subtotal):>11}",
+        f"{'Discount':<28}{money(-sale.discount_amount):>11}",
+        f"{'Tax':<28}{money(sale.tax_amount):>11}",
+        f"{'TOTAL':<28}{money(sale.total_amount):>11}",
     ]
     if sale.payments:
         p = sale.payments[-1]
-        lines.append(f"{'Payment (' + p.payment_method.value + ')':<28}{p.amount:>10.2f}")
+        lines.append(f"{'Payment (' + p.payment_method.value + ')':<28}{money(p.amount):>11}")
         if p.tendered_amount is not None:
-            lines.append(f"{'Tendered':<28}{p.tendered_amount:>10.2f}")
-            lines.append(f"{'Change Due':<28}{p.change_due:>10.2f}")
+            lines.append(f"{'Tendered':<28}{money(p.tendered_amount):>11}")
+            lines.append(f"{'Change Due':<28}{money(p.change_due):>11}")
     lines += ["========================================", "     Thank you for shopping with us!", "========================================"]
 
     return Response(content="\n".join(lines), media_type="text/plain")

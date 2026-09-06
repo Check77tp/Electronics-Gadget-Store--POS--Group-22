@@ -4,6 +4,8 @@
 // `saleData`, the backend's authoritative SaleRead — never computed and
 // trusted purely client-side (per claude/README.md Section 11 / the spec).
 
+import { formatMoney } from '../../utils/currency';
+
 const PAYMENT_TABS = [
   { id: 'cash', label: 'Cash', icon: 'payments' },
   { id: 'card', label: 'Card', icon: 'credit_card' },
@@ -20,7 +22,7 @@ function CartRow({ item, onIncrement, onDecrement, onRemove }) {
       <div className="flex flex-col min-w-0 flex-1">
         <span className="font-body-sm text-body-sm font-semibold text-on-surface truncate">{product.name}</span>
         <span className="font-label-code text-label-code text-outline">
-          ${product.price.toFixed(2)} ea &middot; SKU: {product.sku}
+          {formatMoney(product.price)} ea &middot; SKU: {product.sku}
         </span>
       </div>
       <div className="flex items-center gap-1.5 shrink-0">
@@ -44,7 +46,7 @@ function CartRow({ item, onIncrement, onDecrement, onRemove }) {
       </div>
       <div className="flex items-center gap-2 shrink-0">
         <span className="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface w-16 text-right">
-          ${lineTotal.toFixed(2)}
+          {formatMoney(lineTotal)}
         </span>
         <button
           type="button"
@@ -128,7 +130,7 @@ export default function CartPanel({
           <span className="material-symbols-outlined text-[16px]">remove_shopping_cart</span> Clear Cart
         </button>
         <label className="flex items-center gap-1 font-body-sm text-body-sm text-primary">
-          <span className="material-symbols-outlined text-[16px]">sell</span> Discount $
+          <span className="material-symbols-outlined text-[16px]">sell</span> Discount K
           <input
             type="number"
             min="0"
@@ -150,22 +152,22 @@ export default function CartPanel({
       <div className="p-space-md bg-surface-container/30 flex flex-col gap-1.5 shadow-inner">
         <div className="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
           <span>Subtotal ({itemCount} item{itemCount === 1 ? '' : 's'})</span>
-          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">${subtotal.toFixed(2)}</span>
+          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">{formatMoney(subtotal)}</span>
         </div>
         <div className="flex justify-between items-center text-emerald-700 font-body-sm text-body-sm">
           <span>Discount</span>
-          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold">-${discount.toFixed(2)}</span>
+          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold">-{formatMoney(discount)}</span>
         </div>
         <div className="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
           <span>Est. Sales Tax (8.25%)</span>
-          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">${tax.toFixed(2)}</span>
+          <span className="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">{formatMoney(tax)}</span>
         </div>
         <div className="mt-2 p-2.5 rounded-lg bg-primary-container text-on-primary flex items-center justify-between shadow-md">
           <div className="flex flex-col">
             <span className="font-label-code text-label-code text-on-primary-container uppercase font-semibold">Total Amount Due</span>
-            <span className="font-body-sm text-body-sm opacity-90">USD Currency</span>
+            <span className="font-body-sm text-body-sm opacity-90">ZMW Currency</span>
           </div>
-          <span className="font-label-numeric-lg text-label-numeric-lg font-bold tracking-tight">${total.toFixed(2)}</span>
+          <span className="font-label-numeric-lg text-label-numeric-lg font-bold tracking-tight">{formatMoney(total)}</span>
         </div>
       </div>
 
@@ -204,7 +206,7 @@ export default function CartPanel({
                   onClick={() => onQuickCash(Math.ceil((total + bump) / 10) * 10)}
                   className="py-1.5 rounded-lg bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold hover:bg-surface-container-high transition-colors"
                 >
-                  +${bump}
+                  +K{bump}
                 </button>
               ))}
             </div>
@@ -212,7 +214,7 @@ export default function CartPanel({
               <div className="p-2 rounded-lg bg-surface-container-low flex flex-col justify-center">
                 <label className="font-label-code text-label-code text-outline uppercase font-semibold">Tendered</label>
                 <div className="flex items-center mt-0.5">
-                  <span className="font-label-numeric-md text-label-numeric-md text-on-surface mr-1">$</span>
+                  <span className="font-label-numeric-md text-label-numeric-md text-on-surface mr-1">K</span>
                   <input
                     type="text"
                     inputMode="decimal"
@@ -227,7 +229,7 @@ export default function CartPanel({
                   {cashInsufficient ? 'Amount Short' : 'Change (est.)'}
                 </span>
                 <span className="font-label-numeric-lg text-label-numeric-lg font-bold leading-tight">
-                  ${cashInsufficient ? shortfall.toFixed(2) : estimatedChange.toFixed(2)}
+                  {formatMoney(cashInsufficient ? shortfall : estimatedChange)}
                 </span>
               </div>
             </div>

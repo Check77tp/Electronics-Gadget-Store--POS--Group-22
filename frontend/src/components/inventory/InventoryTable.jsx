@@ -1,12 +1,9 @@
 import StockStatusBadge, { deriveStockStatus } from '../common/StockStatusBadge';
+import { formatMoney } from '../../utils/currency';
 
 // Inventory ledger table, ported from inventory_stock_management_code.html's
 // "Inventory Master Table", built on top of ProductRead rows from
 // GET /api/products (which already embeds `inventory`).
-
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
-}
 
 function TableSkeleton() {
   return (

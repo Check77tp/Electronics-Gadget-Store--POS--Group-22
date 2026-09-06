@@ -18,7 +18,7 @@ DATABASE_URL = f"sqlite:///{DB_PATH}"
 
 # --- Business rules ---
 DEFAULT_TAX_RATE = 0.0825  # 8.25%, matches the Stitch UI mock (Section 13 reporting / Apply Tax use case)
-CURRENCY_SYMBOL = "$"
+CURRENCY_SYMBOL = "K"  # Zambian Kwacha (ZMW)
 
 # --- External API integration mode ---
 # All three external integrations (Flutterwave, Africa's Talking, Mailgun) run in MOCK mode

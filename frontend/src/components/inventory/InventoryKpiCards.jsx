@@ -2,6 +2,8 @@
 // "Inventory KPI Summary Deck", sourced from GET /api/reports/inventory
 // (InventoryReportResponse) rather than recomputed client-side.
 
+import { formatMoney } from '../../utils/currency';
+
 function Card({ label, value, icon, accent, footer }) {
   return (
     <div className="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
@@ -36,7 +38,7 @@ export default function InventoryKpiCards({ report, isLoading }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
       <Card
         label="Inventory Valuation"
-        value={`$${report.total_stock_value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
+        value={formatMoney(report.total_stock_value)}
         icon="account_balance_wallet"
       />
       <Card label="Active SKUs" value={report.total_skus} icon="devices_other" accent={{ iconBg: 'bg-surface-container text-tertiary' }} />

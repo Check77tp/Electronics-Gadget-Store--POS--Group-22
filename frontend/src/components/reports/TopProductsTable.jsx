@@ -1,9 +1,7 @@
 // Top-selling products table sourced from `top_products` in
 // SalesReportResponse (already ranked/limited server-side).
 
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
-}
+import { formatMoney } from '../../utils/currency';
 
 export default function TopProductsTable({ products, isLoading }) {
   return (

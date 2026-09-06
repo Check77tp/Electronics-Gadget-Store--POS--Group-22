@@ -19,9 +19,7 @@ const STATUS_LABELS = {
   out_of_stock: 'OUT OF STOCK',
 };
 
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-}
+import { formatMoney } from '../../utils/currency';
 
 function Stat({ label, value, accent }) {
   return (

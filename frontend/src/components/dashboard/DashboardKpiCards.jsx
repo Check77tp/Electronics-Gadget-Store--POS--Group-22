@@ -6,9 +6,7 @@
 // metrics are dropped rather than invented. Card shape matches
 // SalesKpiCards.jsx / InventoryKpiCards.jsx for visual consistency.
 
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-}
+import { formatMoney } from '../../utils/currency';
 
 function Card({ label, value, icon, accent, footer }) {
   return (

@@ -4,9 +4,7 @@
 // height as a percentage of the period's max day, with the value shown on
 // hover (native title tooltip) and always-visible under narrow bar counts.
 
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
-}
+import { formatMoney } from '../../utils/currency';
 
 function formatDayLabel(dateStr) {
   const d = new Date(`${dateStr}T00:00:00`);
@@ -37,10 +35,10 @@ export default function SalesTrendChart({ salesByDay, isLoading }) {
             return (
               <div key={d.date} className="flex-1 min-w-[8px] h-full flex flex-col items-center justify-end gap-space-2xs group">
                 <span className="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  {formatMoney(d.total)}
+                  {formatMoney(d.total, { decimals: 0 })}
                 </span>
                 <div
-                  title={`${formatDayLabel(d.date)}: ${formatMoney(d.total)}`}
+                  title={`${formatDayLabel(d.date)}: ${formatMoney(d.total, { decimals: 0 })}`}
                   style={{ height: `${heightPct}%` }}
                   className="w-full rounded-t bg-primary-container hover:bg-primary transition-colors min-h-[4px]"
                 />

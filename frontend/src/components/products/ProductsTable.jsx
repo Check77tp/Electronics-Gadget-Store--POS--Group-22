@@ -1,12 +1,9 @@
 import StockStatusBadge, { deriveStockStatus } from '../common/StockStatusBadge';
+import { formatMoney } from '../../utils/currency';
 
 // Product Catalog table, ported from project_management_catalog_code.html's
 // table markup, wired to real ProductRead rows. Margin is computed
 // client-side per the task spec: (price - cost) / price.
-
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
-}
 
 function TableSkeleton() {
   return (

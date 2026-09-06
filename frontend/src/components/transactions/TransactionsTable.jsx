@@ -5,6 +5,8 @@
 // (skeleton rows while loading, an inline error banner, a centered empty
 // state) so it reads as the same app rather than a bolt-on.
 
+import { formatMoney } from '../../utils/currency';
+
 const STATUS_STYLES = {
   completed: 'bg-emerald-50 text-emerald-700',
   pending: 'bg-amber-50 text-amber-800',
@@ -26,10 +28,6 @@ function StatusPill({ status }) {
       {status}
     </span>
   );
-}
-
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
 }
 
 function formatDateTime(iso) {

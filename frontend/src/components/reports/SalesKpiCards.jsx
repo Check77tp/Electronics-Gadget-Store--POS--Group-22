@@ -2,9 +2,7 @@
 // 2) for visual consistency, sourced straight from GET /api/reports/sales
 // (SalesReportResponse) rather than recomputed client-side.
 
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-}
+import { formatMoney } from '../../utils/currency';
 
 function Card({ label, value, icon, accent }) {
   return (

@@ -4,6 +4,7 @@ import Modal from '../common/Modal';
 import ReceiptModal from '../pos/ReceiptModal';
 import { getErrorMessage } from '../../api/client';
 import { fetchSaleDetail, fetchReceiptText } from '../../api/pos';
+import { formatMoney } from '../../utils/currency';
 
 // Transaction Detail view (Increment 3), opened from a TransactionsTable row.
 // Re-fetches GET /api/sales/{id} (rather than trusting the row already held
@@ -17,10 +18,6 @@ const STATUS_STYLES = {
   pending: 'bg-amber-50 text-amber-800',
   cancelled: 'bg-surface-container text-on-surface-variant',
 };
-
-function formatMoney(value) {
-  return `$${Number(value ?? 0).toFixed(2)}`;
-}
 
 function formatDateTime(iso) {
   if (!iso) return '--';

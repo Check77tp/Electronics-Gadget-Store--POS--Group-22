@@ -2,6 +2,8 @@
 // point_of_sale_terminal_code.html's "LEFT 65% CATALOG & LOOKUP AREA",
 // classes kept close to the Stitch export, wired to real data + handlers.
 
+import { formatMoney } from '../../utils/currency';
+
 function StockBadge({ inventory }) {
   if (!inventory) {
     return (
@@ -60,7 +62,7 @@ function ProductCard({ product, cartQuantity, onAdd }) {
         <p className="font-label-code text-label-code text-outline mt-0.5">BC: {product.barcode}</p>
       </div>
       <div className="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
-        <span className="font-label-numeric-md text-label-numeric-md text-on-surface">${product.price.toFixed(2)}</span>
+        <span className="font-label-numeric-md text-label-numeric-md text-on-surface">{formatMoney(product.price)}</span>
         {disabled ? (
           <button
             type="button"

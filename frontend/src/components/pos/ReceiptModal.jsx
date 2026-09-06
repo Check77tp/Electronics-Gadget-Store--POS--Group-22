@@ -7,6 +7,8 @@
 // button only renders when a handler is supplied) and `title` lets that
 // caller say "Receipt" instead of the just-completed-sale copy.
 
+import { formatMoney } from '../../utils/currency';
+
 export default function ReceiptModal({ sale, receiptText, isLoadingReceipt, onNewSale, onClose, title = 'Sale Completed' }) {
   const lastPayment = sale?.payments?.[sale.payments.length - 1];
 
@@ -31,7 +33,7 @@ export default function ReceiptModal({ sale, receiptText, isLoadingReceipt, onNe
           <div className="px-space-lg pt-space-md flex justify-between items-center">
             <span className="font-body-sm text-body-sm text-on-surface-variant">Change Due</span>
             <span className="font-label-numeric-lg text-label-numeric-lg font-bold text-on-surface">
-              ${lastPayment.change_due.toFixed(2)}
+              {formatMoney(lastPayment.change_due)}
             </span>
           </div>
         )}
