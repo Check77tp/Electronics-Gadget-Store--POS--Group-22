@@ -7,8 +7,8 @@ R3: Data security vulnerabilities.
 R4: Incorrectly scanning of the product or gadget barcode.
 
 ## Business Risks
-R4: System may not meet stakeholder expectations.  
-R5: Budget or infrastructure limitations.
+R5: System may not meet stakeholder expectations.  
+R6: Budget or infrastructure limitations.
 
 
 
