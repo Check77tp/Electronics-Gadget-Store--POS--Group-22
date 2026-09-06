@@ -1,0 +1,16 @@
+2026-09-06 12:13:06 | INFO | action=database_seeded actor=system detail=20 products, 4 users
+2026-09-06 12:13:56 | INFO | action=server_startup actor=system
+2026-09-06 12:39:06 | ERROR | action=login_failed detail=username=Admin
+2026-09-06 12:39:45 | INFO | action=login_success actor=admin
+2026-09-06 16:56:54 | ERROR | action=login_failed detail=username=manager
+2026-09-06 16:57:39 | ERROR | action=login_failed detail=username=manager
+2026-09-06 16:57:42 | ERROR | action=login_failed detail=username=manager
+2026-09-06 16:57:48 | ERROR | action=login_failed detail=username=Manager
+2026-09-06 16:57:49 | ERROR | action=login_failed detail=username=Manager
+2026-09-06 16:57:49 | ERROR | action=login_failed detail=username=Manager
+2026-09-06 16:57:49 | ERROR | action=login_failed detail=username=Manager
+2026-09-06 16:57:49 | ERROR | action=login_failed detail=username=Manager
+2026-09-06 16:58:21 | ERROR | action=login_failed detail=username=manager
+2026-09-06 16:58:43 | INFO | action=login_success actor=manager
+2026-09-06 16:59:41 | ERROR | action=login_disabled_account detail=username=cashier2
+2026-09-06 16:59:48 | INFO | action=login_success actor=cashier
