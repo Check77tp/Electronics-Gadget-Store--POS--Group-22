@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary-fixed-variant":"#0039b5","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","surface-container-lowest":"#ffffff","primary":"#0037b0","tertiary":"#004870","on-tertiary-fixed":"#001d31","on-surface":"#0b1c30","tertiary-container":"#006194","surface-tint":"#2151da","background":"#f8f9ff","outline-variant":"#c4c5d7","outline":"#747686","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-tertiary-container":"#b2d9ff","primary-fixed":"#dce1ff","on-secondary-fixed":"#131b2e","surface-variant":"#d3e4fe","inverse-surface":"#213145","on-primary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-primary-fixed":"#001551","on-surface-variant":"#434655","on-tertiary":"#ffffff","surface":"#f8f9ff","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","secondary-fixed":"#dae2fd","surface-container-high":"#dce9ff","primary-fixed-dim":"#b7c4ff","on-background":"#0b1c30","on-error":"#ffffff","inverse-primary":"#b7c4ff","error-container":"#ffdad6","surface-dim":"#cbdbf5","secondary-container":"#dae2fd","on-primary-container":"#cad3ff","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","error":"#ba1a1a","on-error-container":"#93000a","surface-container-low":"#eff4ff","surface-container-highest":"#d3e4fe","surface-container":"#e5eeff","primary-container":"#1d4ed8","secondary":"#565e74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","pos-cart-width":"24rem","space-2xl":"2rem","pos-sidebar-width":"16rem","space-sm":"0.5rem","touch-target-min":"2.75rem","space-xl":"1.5rem","space-md":"0.75rem","space-3xl":"3rem","gutter-default":"1rem","space-xs":"0.25rem","space-lg":"1rem"},"fontFamily":{"headline-lg":["Hanken Grotesk"],"label-numeric-lg":["JetBrains Mono"],"display-lg":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"label-numeric-md":["JetBrains Mono"],"body-lg":["Hanken Grotesk"],"label-numeric-sm":["JetBrains Mono"],"label-badge":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"label-code":["JetBrains Mono"],"body-sm":["Hanken Grotesk"]},"fontSize":{"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-numeric-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-numeric-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-numeric-sm":["13px",{"lineHeight":"18px","fontWeight":"500"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-code":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-pos-sidebar-width bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="px-space-lg py-space-md bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="GadgetPOS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHRN5qnZKMIEFgXyrTQ1wmXUti3V8gMGw50T0FUKCH8zveFtvml03bnicmURqX-yet76g1M-ri23SL4VfnmXEuv8RCNgkMI_RLV9wDfk3xn5iwbAGK5ZeBh6M94TcvDz6Ev310QjFEKveJW3siXHdyMEwCo_Fwu4_J4AjvkUV90C3MsqdsL-opLEF4Ivbbr941n0Sr5bQxvHMWHDAuvriWBAPCD2gZDT5RdbaW2jmOIupd0JikLxV8spM"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest tracking-tight">GadgetPOS</span><span class="font-label-code text-label-code text-primary-fixed-dim uppercase tracking-wider">Terminal OS</span></div></div><div class="mt-space-md p-space-sm bg-surface-variant/10 rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">storefront</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">Downtown Tech Hub #04</span></div><div class="flex items-center justify-between mt-space-xs"><span class="font-label-code text-label-code text-outline-variant">Reg: POS-02</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-950/60"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-code text-label-code text-emerald-300">Online</span></div></div></div></div><nav class="mt-space-sm px-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary font-semibold" data-path="point-of-sale" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span class="font-body-md text-body-md">Point of Sale</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="products" href="#"><span class="material-symbols-outlined text-[20px]">devices_other</span><span class="font-body-md text-body-md">Products</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-body-md text-body-md">Inventory</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="sales-and-transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Sales &amp; Transactions</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="reports-and-analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Reports &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="font-body-md text-body-md">User Management</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-md m-space-sm bg-surface-variant/10 rounded-xl"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-label-code text-label-code text-outline-variant uppercase">Cashier Active</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">David Vance</span><span class="font-label-code text-label-code text-primary-fixed-dim truncate">Admin / Manager</span></div></div></div></aside><div class="pl-pos-sidebar-width min-h-screen flex flex-col"><header class="fixed top-0 left-pos-sidebar-width right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">store</span><span class="font-body-sm text-body-sm">Register 02</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Console</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">barcode_scanner</span><input class="w-full pl-9 pr-16 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline/70" placeholder="Scan barcode or search SKU [Ctrl+K]..." type="text"/><span class="absolute right-2 font-label-code text-label-code px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Ctrl+K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">point_of_sale</span><div class="flex flex-col text-left"><span class="font-label-code text-label-code text-on-surface-variant">Shift #4092 • Open</span><span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">$250.00 Drawer</span></div></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span class="font-body-sm text-body-sm font-semibold hidden sm:inline">New Sale</span></button><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full font-label-badge text-[10px] flex items-center justify-center font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="System Health" type="button"><span class="material-symbols-outlined text-[20px]">sensors</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Toggle Fullscreen" type="button"><span class="material-symbols-outlined text-[20px]">fullscreen</span></button></div><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">David Vance</span><span class="font-label-code text-label-code text-on-surface-variant">Store Admin</span></div><button class="p-1 text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Active POS Main Split Surface -->
+<div class="flex flex-col lg:flex-row gap-space-md p-space-md w-full max-w-[1920px] mx-auto min-h-[calc(100vh-4rem)]">
+<!-- LEFT 65% CATALOG & LOOKUP AREA -->
+<div class="w-full lg:w-[63%] xl:w-[65%] flex flex-col gap-space-md">
+<!-- Live Barcode & High Velocity Search Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-stretch md:items-center gap-space-sm">
+<!-- Continuous Scanner Input Target -->
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[20px] animate-pulse">barcode_scanner</span>
+</div>
+<input autofocus="" class="w-full pl-10 pr-24 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm outline-none ring-2 ring-primary/40 focus:ring-primary placeholder:text-outline transition-all" id="barcode-input" placeholder="Instant Barcode Scan (e.g. 7890123456) or SKU lookup..." type="text"/>
+<div class="absolute inset-y-0 right-2 flex items-center gap-1.5 pointer-events-none">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-variant/40 text-on-surface-variant font-label-code text-label-code">
+                AUTO
+              </span>
+<kbd class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-code text-label-code font-bold shadow-sm">
+                ↵ SCAN
+              </kbd>
+</div>
+</div>
+<!-- Quick Stock & Sort Utilities -->
+<div class="flex items-center gap-space-xs shrink-0">
+<div class="relative flex items-center">
+<button class="flex items-center gap-1.5 px-3 py-2.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" id="filter-instock-btn" onclick="toggleInStockFilter(this)" type="button">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>In Stock Only</span>
+</button>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5 gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">sort</span>
+<select class="bg-transparent text-on-surface font-body-sm text-body-sm outline-none cursor-pointer pr-1">
+<option value="pop">Popularity</option>
+<option value="price-low">Price: Low to High</option>
+<option value="price-high">Price: High to Low</option>
+<option value="name">Item Name A-Z</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Horizontal Category Slider with Live Counts -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 text-nowrap scrollbar-none pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm flex items-center gap-1.5">
+<span>All Items</span>
+<span class="px-1.5 py-0.2 bg-on-primary/20 rounded font-label-code text-[10px]">142</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span>Audio &amp; Wearables</span>
+<span class="px-1.5 py-0.2 bg-on-surface/10 rounded font-label-code text-[10px]">38</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span>Computer Accessories</span>
+<span class="px-1.5 py-0.2 bg-on-surface/10 rounded font-label-code text-[10px]">45</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span>Power &amp; Cables</span>
+<span class="px-1.5 py-0.2 bg-on-surface/10 rounded font-label-code text-[10px]">28</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span>Smartphones &amp; Tablets</span>
+<span class="px-1.5 py-0.2 bg-on-surface/10 rounded font-label-code text-[10px]">24</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span>Gaming Gear</span>
+<span class="px-1.5 py-0.2 bg-on-surface/10 rounded font-label-code text-[10px]">17</span>
+</button>
+</div>
+</div>
+<!-- Catalog Card Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-space-sm flex-1 overflow-y-auto max-h-[calc(100vh-14rem)] pr-0.5">
+<!-- Product 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 42 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">PWR-65</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Anker 65W GaN compact wall charger plug in matte charcoal black, high resolution product shot isolated against studio lighting with clean soft navy reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIyQcWzrKcveUY-shOk1aFutrQfhM5wFIZOh8kgpACbdHOb1fp4WqdtIX4z7MXRGETGy5vU0o5jm8z6FYud21mtzWoqQwPPWhThQ3z87RtjwisF8kcAFXrrAoaXd16ayjb_NqNr5Ja_MRlkUelHNhDPHu2Vo_04xjDgUs_HETkoCvZBM9kJYDih1nDT6kB8jAcN9pPCcs805Ekd1WwObLQE9pnywbKLj1Ur6Se4G3TGGLxlyX6ro5B"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Anker 65W GaN Fast Charger</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123456</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between border-t border-transparent bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$39.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Anker 65W GaN Fast Charger', 39.99, 'PWR-65-ANK')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 14 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">ACC-LOG</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Logitech MX Master 3S ergonomic wireless mouse in graphite grey finish on minimal matte desktop setup with subtle corporate blue ambient tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8CpPVjJAhXEK6KWWngAj6np5VVK1EABKXUgkBP9hMeNAOZsqYqB83x5NXMrEnKTPuHxdoy7QXs5dL14LhKxoLn9RrcRZ3bC2srqgRe0_Ng93r_c0DpIl8xvRrkWQy5vsWwpcJuaYLS0MqFRKlxc2D3CUcFyBjRYxMZ_t49lw0o-HwTdnWArrcE8peKDOTrGPFoMlnzJRy9g91FQnWf5IReUTaw9HTRCBtpxgcMUaFTOSv2FJiOcEh"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Logitech MX Master 3S Mouse</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123457</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$99.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Logitech MX Master 3S Wireless Mouse', 99.99, 'ACC-LOG-MX3')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 6 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">AUD-SNY</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sony WH 1000XM5 wireless noise cancelling headphones in silver cream color displayed against clean studio slate architectural surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQ-68FK7hKFHVCkuYFHAeHrldOeN2-TCxZWQ1VLRWb1PHKokxlrfoM4gr8-LXOxfsghQUKIYTLDJfrMMH1VUvwxxsfuE3VuEDj7RBz9PEIv5dOJF7ZLK2864GQHIaeh6X5kjJ-DKSdGHtXELrfz7Av2ebrU9PGwfgrZfJ4hb3PHJR3bN_UhgtBC97vft-NimKW8cyZZWphylIbyhKANs7-sYBFdoe17AKUywSFtufNxDQdyPEmPUd"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Sony WH-1000XM5 ANC</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123458</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$349.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Sony WH-1000XM5 Wireless Headphones', 349.99, 'AUD-SNY-XM5')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 4: Low Stock warning -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 font-label-badge text-label-badge font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span> ONLY 3 LEFT
+              </span>
+<span class="font-label-code text-label-code text-outline">ACC-KCH</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Keychron K2 wireless mechanical keyboard with rgb backlight and retro grey PBT keycaps angled view on professional studio desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDArbEl40ywC7W9KjMRW4vJQoNcBW2pFIOjiqCfyjDbduvNKJ9K1o5iNIi_JxVTUeYrjDFzBoHFVqbglI7RsHGylJHKsIoCHyVDUIJhYJAiRjRxkHiWkPLeVwZmTJOJWS4Oj4M_ILtFxoy6_tpGycYmPtpObYWKlH9WirDNZrUGU3j8ubjJuqWkcc5HQPfqsfZiX4prvdsXcfo1vmw8AqnTc4uZLP2lZ10SLl-84-2VFgJ3j8zvbNog"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Keychron K2 Mech Keyboard</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123459</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$89.00</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Keychron K2 Mechanical Keyboard', 89.00, 'ACC-KCH-K2')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 9 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">TAB-SAM</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Samsung Galaxy Tab S9 ultra slim tablet front and stylus pen laying on clean architectural surface with realistic display reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCINL_A_AaRXt_mGlRvvg1E7ORgvCHRQbgDCXOhoUVJ-mi4Sd6CRtYGaBCStL9axxVqkcWLs5WdZbEMTKry9kb1qOvXvwWoc8Kh5Fxu24tEZ03ti6eGfFKwDaxeF36bTe0n943W50jJBzu6jvzLz-HrQ1QOX5vGLU54Cz0rriUyj27fRtyQlD8bufBA2Z5gR8m-axriBwmZKBGKgKNoqnMjMEocks9_pwjjRjj-bp6sxWg8WeuWwCes"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Samsung Galaxy Tab S9 128GB</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123460</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$699.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Samsung Galaxy Tab S9 128GB', 699.99, 'TAB-SAM-S9')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 65 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">CBL-BLK</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Belkin premium braided black USB-C to USB-C charging cord coiled neatly with anodized connectors on modern product podium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7PNUaN5w_Y2V1jbaLxFUp2QkOmV4aifqFeEbFCdKvlMhV6EOxpzcMsYECg8OxKtRLIgm9dUl5dEnFd4iapWUkKOCOuqufuIPHSfIGOslZgEC8bPNSjdH41FcCNAfH70DOc0e57YrXX1XugqkGI-k6AwGa6Qxy2ivvzgt8OMBnHUTF0HjKYw6QtXEa51fAlpFILjVhKJ1pZDQ0NJZwPcHIMywIY-6JC5EyOKGvmC707qnP_bB9XwUK"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">Belkin 2m Braided Type-C</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123461</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$19.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Belkin 2m Braided USB-C Cable', 19.99, 'CBL-BLK-2M')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 7: Out of Stock -->
+<div class="relative bg-surface-container-lowest/80 rounded-xl p-space-sm shadow-sm flex flex-col justify-between opacity-80">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-error-container text-error font-label-badge text-label-badge font-bold">
+                OUT OF STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">PWR-BAS</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5 grayscale opacity-75">
+<img class="w-full h-full object-cover" data-alt="Baseus 20000mAh 65W heavy duty portable power bank in dark grey metal finish with digital battery indicator display on dark surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhOIul3M-Wl98uhzAZQqOEC1HkkHrWlPRoZVhJeqPmI0dhF0aUeiwsWbrmrrPyDEEj94_Fsz37gXBHYPNzX8fBqrZ21p6L8GuvqsbBvKtMlzbzJJQABOROA5yi7FHwGZUBwdOwQ0ndHbJGqdyrZuORsJiuuKZmue5nxtR1W-QU94HUzZi5YpVLI2MlDrkzxOu0TYEAubtnGsVibxku1rgdg6faVFP3teI5h0db763b5v4TVxTZyWht"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant line-clamp-1 leading-snug">Baseus 20,000mAh 65W Power</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123462</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-outline">$54.99</span>
+<button class="h-8 px-3 rounded bg-surface-container text-outline font-body-sm text-body-sm font-semibold cursor-not-allowed" disabled="" type="button">
+              Sold Out
+            </button>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 18 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">AUD-APL</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Apple AirPods Pro 2nd Generation with open magnetic charging case showing earbuds against pure soft studio tech backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrHSwBEVWn3OwJQ5HpQgNF2-28aAY0BMhqNFq7MWjx9NsZkaEoXZyLDciqHgvr7zlPZX0TjMBIXrjRnrxBOupgjuSgSiJ_asxQyhQzWaZFIzlQcgNymg4QBwjjWPZzyuYACprw0M_qxbBohAW5mZ9sxDGDc8qrIDRzJmVgjG4fcqI2JdQLBrLFS_04CarBOcesJATJOc_pn-roETkFkEjC5LJdBGzlgH8aKBBalUreufzwD2aJd2x4"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">AirPods Pro (2nd Gen) USB-C</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123463</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$249.00</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('Apple AirPods Pro (2nd Gen) USB-C', 249.00, 'AUD-APL-APP2')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+<!-- Product 9 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between hover:shadow-md hover:bg-surface-container-low transition-all">
+<div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 8 IN STOCK
+              </span>
+<span class="font-label-code text-label-code text-outline">STR-SND</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden bg-surface-container mb-2.5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="SanDisk Extreme 1TB portable rugged solid state drive with orange carabiner loop lying on technical workspace grid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgrX5eXgIcZycdJjiX76TbjJoaPmSoJwGEYeFYDLliFgEt0d1XnU-y6lf-tns2GYOxAFNyTDQnmWNt7NJnaGK-7XAYlA1_cEkK88-nEZrcZQ7MSRxJ-DMrxA5mGIxFuFqk53NdK0V5s6NOyNtwL0QyyBysN4Qtw6beHegbIaoyLfsmGVYXnKNYjzV1GYWAeN0mo-Ek0PMmlioZ0L1BBChmKT7IfTVZ80RakitxM90mRwfsUboiksh"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 leading-snug">SanDisk Extreme 1TB SSD</h3>
+<p class="font-label-code text-label-code text-outline mt-0.5">BC: 7890123464</p>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between bg-surface-container-low/40 p-1.5 rounded-lg">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">$119.99</span>
+<button class="h-8 px-3 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="addToCart('SanDisk Extreme 1TB Portable SSD', 119.99, 'STR-SND-1TB')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 35% ACTIVE CART & CHECKOUT TERMINAL -->
+<div class="w-full lg:w-[37%] xl:w-[35%] flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<!-- Cart Header & Order Identification -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">shopping_cart_checkout</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">#ORD-2024-8841</span>
+</div>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">REG-02</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[14px]">person</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Walk-in Customer</span>
+</div>
+<button class="font-body-sm text-body-sm text-primary hover:underline flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[16px]">loyalty</span> Attach Loyalty
+          </button>
+</div>
+</div>
+<!-- Scrollable Cart Line Items -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-xs max-h-[300px] xl:max-h-[320px]">
+<!-- Cart Row 1 -->
+<div class="p-2 rounded-lg bg-surface hover:bg-surface-container transition-colors flex items-center justify-between gap-2" id="cart-row-1">
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Logitech MX Master 3S</span>
+<span class="font-label-code text-label-code text-outline">$99.99 ea • SKU: ACC-LOG-MX3</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-1', -1, 99.99)">-</button>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold w-6 text-center" id="cart-qty-1">1</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-1', 1, 99.99)">+</button>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface w-16 text-right" id="cart-row-total-1">$99.99</span>
+<button class="text-outline hover:text-error transition-colors p-1" onclick="removeCartRow('cart-row-1', 99.99)" title="Remove Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Cart Row 2 -->
+<div class="p-2 rounded-lg bg-surface hover:bg-surface-container transition-colors flex items-center justify-between gap-2" id="cart-row-2">
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Anker 65W GaN Fast Charger</span>
+<span class="font-label-code text-label-code text-outline">$39.99 ea • SKU: PWR-65-ANK</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-2', -1, 39.99)">-</button>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold w-6 text-center" id="cart-qty-2">2</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-2', 1, 39.99)">+</button>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface w-16 text-right" id="cart-row-total-2">$79.98</span>
+<button class="text-outline hover:text-error transition-colors p-1" onclick="removeCartRow('cart-row-2', 79.98)" title="Remove Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Cart Row 3 -->
+<div class="p-2 rounded-lg bg-surface hover:bg-surface-container transition-colors flex items-center justify-between gap-2" id="cart-row-3">
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Belkin 2m Braided Type-C</span>
+<span class="font-label-code text-label-code text-outline">$19.99 ea • SKU: CBL-BLK-2M</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-3', -1, 19.99)">-</button>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold w-6 text-center" id="cart-qty-3">3</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-3', 1, 19.99)">+</button>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface w-16 text-right" id="cart-row-total-3">$59.97</span>
+<button class="text-outline hover:text-error transition-colors p-1" onclick="removeCartRow('cart-row-3', 59.97)" title="Remove Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Cart Row 4 -->
+<div class="p-2 rounded-lg bg-surface hover:bg-surface-container transition-colors flex items-center justify-between gap-2" id="cart-row-4">
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">SanDisk Extreme 1TB Portable SSD</span>
+<span class="font-label-code text-label-code text-outline">$119.99 ea • SKU: STR-SND-1TB</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-4', -1, 119.99)">-</button>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold w-6 text-center" id="cart-qty-4">1</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-container-high active:scale-95" onclick="updateQty('cart-qty-4', 1, 119.99)">+</button>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface w-16 text-right" id="cart-row-total-4">$119.99</span>
+<button class="text-outline hover:text-error transition-colors p-1" onclick="removeCartRow('cart-row-4', 119.99)" title="Remove Item">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Cart Action Link Row -->
+<div class="px-space-md py-1.5 bg-surface-container-low flex items-center justify-between">
+<button class="text-error hover:underline font-body-sm text-body-sm flex items-center gap-1" onclick="clearCart()" type="button">
+<span class="material-symbols-outlined text-[16px]">remove_shopping_cart</span> Clear Cart
+        </button>
+<button class="text-primary hover:underline font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sell</span> Add Discount / Note
+        </button>
+</div>
+<!-- Calculation Breakdown -->
+<div class="p-space-md bg-surface-container/30 flex flex-col gap-1.5 shadow-inner">
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>Subtotal (7 items)</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface" id="subtotal-val">$359.93</span>
+</div>
+<div class="flex justify-between items-center text-emerald-700 font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span>Store Promo</span>
+<span class="px-1.5 py-0.2 rounded bg-emerald-100 font-label-code text-[10px] font-bold">TECHPRO10</span>
+</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold" id="discount-val">-$23.99</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>Est. Sales Tax (8.25%)</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface" id="tax-val">$27.72</span>
+</div>
+<!-- Grand Total Visual Focal Block -->
+<div class="mt-2 p-2.5 rounded-lg bg-primary-container text-on-primary flex items-center justify-between shadow-md">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-on-primary-container uppercase font-semibold">Total Amount Due</span>
+<span class="font-body-sm text-body-sm opacity-90">USD Currency</span>
+</div>
+<span class="font-label-numeric-lg text-label-numeric-lg font-bold tracking-tight" id="grand-total">$363.66</span>
+</div>
+</div>
+<!-- Tender & Payment Selection -->
+<div class="p-space-md flex flex-col gap-3">
+<!-- Payment Mode Segmented Control -->
+<div class="grid grid-cols-3 gap-1 p-1 rounded-lg bg-surface-container">
+<button class="py-1.5 px-2 rounded font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 bg-surface-container-lowest text-primary shadow-sm" id="tab-cash" onclick="switchPaymentTab('cash')" type="button">
+<span class="material-symbols-outlined text-[16px]">payments</span> Cash
+          </button>
+<button class="py-1.5 px-2 rounded font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface" id="tab-card" onclick="switchPaymentTab('card')" type="button">
+<span class="material-symbols-outlined text-[16px]">credit_card</span> Card
+          </button>
+<button class="py-1.5 px-2 rounded font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface" id="tab-nfc" onclick="switchPaymentTab('nfc')" type="button">
+<span class="material-symbols-outlined text-[16px]">contactless</span> NFC
+          </button>
+</div>
+<!-- Cash Specific Calculator Elements -->
+<div class="flex flex-col gap-2.5" id="cash-panel">
+<!-- Quick Cash Fast Tender Denominations -->
+<div class="grid grid-cols-4 gap-1.5">
+<button class="py-1.5 rounded-lg bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold hover:bg-surface-container-high transition-colors" onclick="setReceived(363.66)" type="button">
+              Exact
+            </button>
+<button class="py-1.5 rounded-lg bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold hover:bg-surface-container-high transition-colors" onclick="setReceived(370.00)" type="button">
+              $370
+            </button>
+<button class="py-1.5 rounded-lg bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold hover:bg-surface-container-high transition-colors" onclick="setReceived(380.00)" type="button">
+              $380
+            </button>
+<button class="py-1.5 rounded-lg bg-primary/10 text-primary font-label-numeric-sm text-label-numeric-sm font-bold hover:bg-primary/20 transition-colors" onclick="setReceived(400.00)" type="button">
+              $400
+            </button>
+</div>
+<!-- Received & Change Matrix -->
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<label class="font-label-code text-label-code text-outline uppercase font-semibold">Tendered</label>
+<div class="flex items-center mt-0.5">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface mr-1">$</span>
+<input class="w-full bg-transparent font-label-numeric-md text-label-numeric-md font-bold text-on-surface outline-none" id="tendered-input" oninput="calculateChange()" type="text" value="400.00"/>
+</div>
+</div>
+<!-- High Contrast Change Due Box -->
+<div class="p-2 rounded-lg bg-emerald-600 text-white flex flex-col justify-center shadow-sm">
+<span class="font-label-code text-label-code uppercase tracking-wider text-emerald-100 font-bold">Change Due</span>
+<span class="font-label-numeric-lg text-label-numeric-lg font-bold leading-tight" id="change-due-val">$36.34</span>
+</div>
+</div>
+</div>
+<!-- Terminal Primary Action Buttons -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-12 rounded-lg bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all" onclick="completeSale()" type="button">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span>Complete Sale &amp; Print Receipt</span>
+<span class="font-label-code text-label-code px-1.5 py-0.5 rounded bg-emerald-800 text-emerald-100 ml-1">F12</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 transition-colors" onclick="holdOrder()" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>Hold Order</span>
+<span class="font-label-code text-label-code text-outline ml-0.5">F8</span>
+</button>
+<button class="h-9 rounded-lg bg-error-container/60 hover:bg-error-container text-error font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 transition-colors" onclick="cancelSale()" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Cancel Sale</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transform transition-all duration-300 pointer-events-none opacity-0 translate-y-4" id="pos-toast">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2 font-body-md text-body-md">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]" id="pos-toast-icon">check_circle</span>
+<span id="pos-toast-message">Transaction processed successfully.</span>
+</div>
+</div>
+</div>
+<script>
+  let totalDue = 363.66;
+
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('pos-toast');
+    const msgEl = document.getElementById('pos-toast-message');
+    const iconEl = document.getElementById('pos-toast-icon');
+    if (!toast) return;
+    
+    msgEl.textContent = message;
+    iconEl.textContent = icon;
+    toast.classList.remove('opacity-0', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-4');
+    }, 2800);
+  }
+
+  function addToCart(title, price, sku) {
+    showToast(`Added ${title} ($${price.toFixed(2)}) to Cart`, 'add_shopping_cart');
+  }
+
+  function updateQty(id, delta, unitPrice) {
+    const qtyElem = document.getElementById(id);
+    if (!qtyElem) return;
+    let qty = parseInt(qtyElem.textContent, 10) + delta;
+    if (qty < 1) qty = 1;
+    qtyElem.textContent = qty;
+    
+    // Update line total
+    const rowNum = id.replace('cart-qty-', '');
+    const rowTotal = document.getElementById(`cart-row-total-${rowNum}`);
+    if (rowTotal) {
+      rowTotal.textContent = `$${(qty * unitPrice).toFixed(2)}`;
+    }
+  }
+
+  function removeCartRow(rowId, amount) {
+    const row = document.getElementById(rowId);
+    if (row) {
+      row.remove();
+      showToast('Item removed from transaction', 'delete');
+    }
+  }
+
+  function clearCart() {
+    if (confirm('Clear all line items in this order?')) {
+      const cartContainer = document.querySelector('.overflow-y-auto.p-space-md');
+      if (cartContainer) {
+        cartContainer.innerHTML = '<div class="py-12 text-center text-outline font-body-md">Cart is empty. Scan items or select from catalog.</div>';
+      }
+      document.getElementById('subtotal-val').textContent = '$0.00';
+      document.getElementById('discount-val').textContent = '$0.00';
+      document.getElementById('tax-val').textContent = '$0.00';
+      document.getElementById('grand-total').textContent = '$0.00';
+      document.getElementById('change-due-val').textContent = '$0.00';
+      totalDue = 0.00;
+      showToast('Cart cleared', 'remove_shopping_cart');
+    }
+  }
+
+  function setReceived(amount) {
+    const input = document.getElementById('tendered-input');
+    if (input) {
+      input.value = amount.toFixed(2);
+      calculateChange();
+    }
+  }
+
+  function calculateChange() {
+    const input = document.getElementById('tendered-input');
+    const changeElem = document.getElementById('change-due-val');
+    if (!input || !changeElem) return;
+    const tendered = parseFloat(input.value) || 0;
+    const change = Math.max(0, tendered - totalDue);
+    changeElem.textContent = `$${change.toFixed(2)}`;
+  }
+
+  function switchPaymentTab(type) {
+    const tabs = ['cash', 'card', 'nfc'];
+    tabs.forEach(t => {
+      const btn = document.getElementById(`tab-${t}`);
+      if (t === type) {
+        btn.className = "py-1.5 px-2 rounded font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 bg-surface-container-lowest text-primary shadow-sm";
+      } else {
+        btn.className = "py-1.5 px-2 rounded font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface";
+      }
+    });
+
+    const cashPanel = document.getElementById('cash-panel');
+    if (type === 'cash') {
+      cashPanel.classList.remove('hidden');
+    } else {
+      cashPanel.classList.add('hidden');
+      showToast(`Switched terminal mode to ${type.toUpperCase()} swipe/tap ready`, 'contactless');
+    }
+  }
+
+  function completeSale() {
+    showToast('Sale #ORD-2024-8841 Finalized & Drawer Popped!', 'receipt_long');
+  }
+
+  function holdOrder() {
+    showToast('Order parked in Shift #4092 Held Orders pool', 'pause_circle');
+  }
+
+  function cancelSale() {
+    if (confirm('Cancel and discard this entire transaction?')) {
+      showToast('Transaction Voided', 'cancel');
+    }
+  }
+
+  function toggleInStockFilter(btn) {
+    btn.classList.toggle('bg-primary');
+    btn.classList.toggle('text-on-primary');
+  }
+
+  // Keyboard shortcut listener for standard POS keys
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'F12') {
+      e.preventDefault();
+      completeSale();
+    } else if (e.key === 'F8') {
+      e.preventDefault();
+      holdOrder();
+    } else if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      document.getElementById('barcode-input')?.focus();
+    }
+  });
+</script></main></div></body></html>

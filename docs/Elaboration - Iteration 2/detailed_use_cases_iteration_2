@@ -1,0 +1,267 @@
+# Detailed Use Cases — Elaboration Iteration 2 (remaining ≈70%)
+
+---
+
+## UC10: Login to System
+**Scenario:** A user authenticates to gain access to the POS system.
+**Triggering event:** User needs to access the system.
+**Actors:** Cashier, Administrator
+**Related use cases:** all others (precondition for most)
+**Stakeholders:** Cashier, Administrator, Owner
+**Preconditions:** User has a valid, active account.
+**Postconditions:** User is authenticated and granted access appropriate to their role.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Enters username and password | 1.1 Validate credentials |
+| 2. Submits | 1.2 Authenticate and determine role |
+| | 1.3 Grant role-based access |
+
+**Exception conditions:** Invalid credentials; disabled account.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor User as Cashier/Administrator
+    participant System as :System
+    User->>System: login(username, password)
+    System-->>User: authenticationResult, dashboard(role)
+```
+
+---
+
+## UC11: Add Product
+**Scenario:** Authorized staff add a new electronic product/gadget to inventory.
+**Triggering event:** A new product needs to be listed for sale.
+**Actors:** Administrator / Inventory Staff
+**Related use cases:** Update Product Information
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Administrator is logged in.
+**Postconditions:** Product (and its Inventory record) is created.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects "Add Product" | 1.1 Display product entry form |
+| 2. Enters product details (name, brand, price, barcode, description, initial stock) | 1.2 Validate input |
+| 3. Submits | 1.3 Create Product record and initial Inventory record |
+
+**Exception conditions:** Duplicate barcode; invalid/missing required fields.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: addProduct(details)
+    System-->>Administrator: confirmation, productID
+```
+
+---
+
+## UC12: Update Product Information
+**Scenario:** Authorized staff update product details.
+**Triggering event:** Price, description, or stock details need to change.
+**Actors:** Administrator / Inventory Staff
+**Related use cases:** Add Product
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Product exists.
+**Postconditions:** Product record is updated.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects product | 1.1 Retrieve current product details |
+| 2. Edits details | 1.2 Validate changes |
+| 3. Saves | 1.3 Update product record |
+
+**Exception conditions:** Invalid data entered.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: selectProduct(productID)
+    System-->>Administrator: productDetails
+    Administrator->>System: updateProduct(productID, changes)
+    System-->>Administrator: confirmation
+```
+
+---
+
+## UC13: Remove Product
+**Scenario:** The administrator removes a discontinued product.
+**Triggering event:** A product is no longer sold by the store.
+**Actors:** Administrator
+**Related use cases:** Update Product Information
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Product exists.
+**Postconditions:** Product is removed (or marked discontinued) and no longer sellable.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects product | 1.1 Prompt for removal confirmation |
+| 2. Confirms removal | 1.2 Mark/remove product record |
+
+**Exception conditions:** Product has an active/pending sale referencing it — system should flag rather than hard-delete.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: removeProduct(productID)
+    System-->>Administrator: confirmationPrompt
+    Administrator->>System: confirmRemoval()
+    System-->>Administrator: productRemoved
+```
+
+---
+
+## UC14: Manage User Accounts
+**Scenario:** The administrator creates, updates, or disables user accounts.
+**Triggering event:** Staffing changes (new hire, role change, departure).
+**Actors:** Administrator
+**Related use cases:** Login to System
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Administrator is logged in.
+**Postconditions:** User account is created, updated, or disabled with the correct role.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects "Manage Users" | 1.1 Display user list |
+| 2. Creates/edits/disables an account, assigns a role | 1.2 Validate input |
+| | 1.3 Create/update account record |
+
+**Exception conditions:** Username already taken; cannot disable the last remaining administrator account.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: createUserAccount(details, role)
+    System-->>Administrator: confirmation
+    Administrator->>System: disableUserAccount(userID)
+    System-->>Administrator: confirmation
+```
+
+---
+
+## UC15: View Sales Report
+**Scenario:** The administrator views sales performance over a period.
+**Triggering event:** Administrator needs sales insight (daily/weekly/monthly).
+**Actors:** Administrator
+**Related use cases:** Export Sales Data
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Sales data exists for the requested period.
+**Postconditions:** Sales report is displayed.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects report period (day/week/month) | 1.1 Query sales records for period |
+| 2. Requests report | 1.2 Aggregate totals, generate report |
+| | 1.3 Display report |
+
+**Exception conditions:** No sales data for the selected period.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: requestSalesReport(period)
+    System-->>Administrator: salesReport
+```
+
+---
+
+## UC16: View Inventory Report
+**Scenario:** Staff view current stock levels across all products.
+**Triggering event:** Need to check stock status.
+**Actors:** Administrator / Inventory Staff
+**Related use cases:** Receive Low Stock Alert
+**Stakeholders:** Administrator, Owner
+**Preconditions:** None.
+**Postconditions:** Inventory report is displayed.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Requests inventory report | 1.1 Query current stock levels for all products |
+| | 1.2 Display report |
+
+**Exception conditions:** None.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: requestInventoryReport()
+    System-->>Administrator: inventoryReport(stockLevels)
+```
+
+---
+
+## UC17: Receive Low Stock Alert
+**Scenario:** The system automatically alerts staff when stock falls below a threshold.
+**Triggering event:** A sale reduces a product's stock below its reorder level.
+**Actors:** System (initiator), Administrator / Inventory Staff (recipient)
+**Related use cases:** View Inventory Report, Process Sale
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Reorder level is configured for the product.
+**Postconditions:** Staff are notified of the low-stock condition.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| — (system-initiated, following a sale) | 1.1 Check stock level after each sale |
+| | 1.2 Compare against reorder level |
+| | 1.3 Generate and send alert if below threshold |
+
+**Exception conditions:** Reorder level not configured for the product — no alert can be generated.
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    participant System as :System
+    actor Administrator
+    Note over System: triggered after each completed sale
+    System->>System: checkStockLevel(productID)
+    System-->>Administrator: lowStockAlert(productID, currentStock)
+```
+
+---
+
+## UC18: Export Sales Data
+**Scenario:** The administrator exports sales data for external analysis or record keeping.
+**Triggering event:** Need for offline/external analysis, backup, or audit.
+**Actors:** Administrator
+**Related use cases:** View Sales Report
+**Stakeholders:** Administrator, Owner
+**Preconditions:** Sales data exists for the requested period.
+**Postconditions:** An export file is produced.
+
+**Main flow:**
+| Actor | System |
+|---|---|
+| 1. Selects "Export" and a period/format | 1.1 Compile sales data for the period |
+| 2. Confirms | 1.2 Generate export file |
+| | 1.3 Provide file for download |
+
+**Exception conditions:** Export generation fails (e.g. storage/service error).
+
+**SSD:**
+```mermaid
+sequenceDiagram
+    actor Administrator
+    participant System as :System
+    Administrator->>System: exportSalesData(period, format)
+    System-->>Administrator: exportFile
+```

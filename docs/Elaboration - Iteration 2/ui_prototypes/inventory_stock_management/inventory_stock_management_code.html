@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary-fixed-variant":"#0039b5","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","surface-container-lowest":"#ffffff","primary":"#0037b0","tertiary":"#004870","on-tertiary-fixed":"#001d31","on-surface":"#0b1c30","tertiary-container":"#006194","surface-tint":"#2151da","background":"#f8f9ff","outline-variant":"#c4c5d7","outline":"#747686","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-tertiary-container":"#b2d9ff","primary-fixed":"#dce1ff","on-secondary-fixed":"#131b2e","surface-variant":"#d3e4fe","inverse-surface":"#213145","on-primary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-primary-fixed":"#001551","on-surface-variant":"#434655","on-tertiary":"#ffffff","surface":"#f8f9ff","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","secondary-fixed":"#dae2fd","surface-container-high":"#dce9ff","primary-fixed-dim":"#b7c4ff","on-background":"#0b1c30","on-error":"#ffffff","inverse-primary":"#b7c4ff","error-container":"#ffdad6","surface-dim":"#cbdbf5","secondary-container":"#dae2fd","on-primary-container":"#cad3ff","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","error":"#ba1a1a","on-error-container":"#93000a","surface-container-low":"#eff4ff","surface-container-highest":"#d3e4fe","surface-container":"#e5eeff","primary-container":"#1d4ed8","secondary":"#565e74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","pos-cart-width":"24rem","space-2xl":"2rem","pos-sidebar-width":"16rem","space-sm":"0.5rem","touch-target-min":"2.75rem","space-xl":"1.5rem","space-md":"0.75rem","space-3xl":"3rem","gutter-default":"1rem","space-xs":"0.25rem","space-lg":"1rem"},"fontFamily":{"headline-lg":["Hanken Grotesk"],"label-numeric-lg":["JetBrains Mono"],"display-lg":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"label-numeric-md":["JetBrains Mono"],"body-lg":["Hanken Grotesk"],"label-numeric-sm":["JetBrains Mono"],"label-badge":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"label-code":["JetBrains Mono"],"body-sm":["Hanken Grotesk"]},"fontSize":{"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-numeric-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-numeric-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-numeric-sm":["13px",{"lineHeight":"18px","fontWeight":"500"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-code":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-pos-sidebar-width bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="px-space-lg py-space-md bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="GadgetPOS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHRN5qnZKMIEFgXyrTQ1wmXUti3V8gMGw50T0FUKCH8zveFtvml03bnicmURqX-yet76g1M-ri23SL4VfnmXEuv8RCNgkMI_RLV9wDfk3xn5iwbAGK5ZeBh6M94TcvDz6Ev310QjFEKveJW3siXHdyMEwCo_Fwu4_J4AjvkUV90C3MsqdsL-opLEF4Ivbbr941n0Sr5bQxvHMWHDAuvriWBAPCD2gZDT5RdbaW2jmOIupd0JikLxV8spM"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest tracking-tight">GadgetPOS</span><span class="font-label-code text-label-code text-primary-fixed-dim uppercase tracking-wider">Terminal OS</span></div></div><div class="mt-space-md p-space-sm bg-surface-variant/10 rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">storefront</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">Downtown Tech Hub #04</span></div><div class="flex items-center justify-between mt-space-xs"><span class="font-label-code text-label-code text-outline-variant">Reg: POS-02</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-950/60"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-code text-label-code text-emerald-300">Online</span></div></div></div></div><nav class="mt-space-sm px-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="point-of-sale" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span class="font-body-md text-body-md">Point of Sale</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="products" href="#"><span class="material-symbols-outlined text-[20px]">devices_other</span><span class="font-body-md text-body-md">Products</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary font-semibold" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-body-md text-body-md">Inventory</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="sales-and-transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Sales &amp; Transactions</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="reports-and-analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Reports &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="font-body-md text-body-md">User Management</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-md m-space-sm bg-surface-variant/10 rounded-xl"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-label-code text-label-code text-outline-variant uppercase">Cashier Active</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">David Vance</span><span class="font-label-code text-label-code text-primary-fixed-dim truncate">Admin / Manager</span></div></div></div></aside><div class="pl-pos-sidebar-width min-h-screen flex flex-col"><header class="fixed top-0 left-pos-sidebar-width right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">store</span><span class="font-body-sm text-body-sm">Register 02</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Console</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">barcode_scanner</span><input class="w-full pl-9 pr-16 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline/70" placeholder="Scan barcode or search SKU [Ctrl+K]..." type="text"/><span class="absolute right-2 font-label-code text-label-code px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Ctrl+K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">point_of_sale</span><div class="flex flex-col text-left"><span class="font-label-code text-label-code text-on-surface-variant">Shift #4092 • Open</span><span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">$250.00 Drawer</span></div></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span class="font-body-sm text-body-sm font-semibold hidden sm:inline">New Sale</span></button><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full font-label-badge text-[10px] flex items-center justify-center font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="System Health" type="button"><span class="material-symbols-outlined text-[20px]">sensors</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Toggle Fullscreen" type="button"><span class="material-symbols-outlined text-[20px]">fullscreen</span></button></div><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">David Vance</span><span class="font-label-code text-label-code text-on-surface-variant">Store Admin</span></div><button class="p-1 text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-xl py-space-lg flex flex-col gap-space-lg">
+<!-- Top Action Breadcrumb & Operational Summary -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code text-label-code">
+<span>OPERATIONS</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>STOCK CONTROL &amp; LEDGER</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">LIVE RECONCILIATION</span>
+</div>
+<div class="flex items-baseline gap-space-md mt-space-2xs">
+<h1 class="font-display-lg text-display-lg tracking-tight text-on-surface">Inventory Management</h1>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Store #04 Downtown Tech Hub</span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors shadow-sm" onclick="openAdjustmentModal('AUD-SNY-XM5', 'Sony WH-1000XM5', 6)" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-headline-sm text-headline-sm">Quick Adjustment</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="font-headline-sm text-headline-sm">Print Barcodes</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span class="font-headline-sm text-headline-sm">Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span class="font-headline-sm text-headline-sm font-semibold">+ Stock Intake / PO</span>
+</button>
+</div>
+</div>
+<!-- Inventory KPI Summary Deck -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Asset Valuation -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Inventory Valuation</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface mt-1">$148,290.00</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-code text-label-code">Cost Basis:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">$89,450.00</span>
+</div>
+</div>
+<!-- Card 2: Active SKUs -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Active SKUs</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface">142</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Units active</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">devices_other</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-code text-label-code">Catalog Spread:</span>
+<span class="font-label-code text-label-code text-primary font-semibold">6 Categories</span>
+</div>
+</div>
+<!-- Card 3: Low Stock Warning -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code uppercase tracking-wider text-amber-700">Low Stock Alert</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-amber-600">12</span>
+<span class="font-body-sm text-body-sm text-amber-700">SKUs below par</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-amber-50/80 px-2 py-1 rounded">
+<span class="font-label-code text-label-code text-amber-800">Requires PO:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-amber-900">Immediate Action</span>
+</div>
+</div>
+<!-- Card 4: Out of Stock -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code uppercase tracking-wider text-error">Depleted Stock</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-error">2</span>
+<span class="font-body-sm text-body-sm text-error">SKUs Zero Count</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">error</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-error-container/60 px-2 py-1 rounded">
+<span class="font-label-code text-label-code text-on-error-container">Critical Velocity:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-error-container">High Priority</span>
+</div>
+</div>
+<!-- Card 5: Turnover Velocity -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Annual Turnover</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface">4.8x</span>
+<span class="font-body-sm text-body-sm text-emerald-600 font-semibold">+0.4x YoY</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-code text-label-code">Dwell Window:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">76.0 Days</span>
+</div>
+</div>
+</div>
+<!-- Filter & Precision Search Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Barcode Search Input with Tech Accent -->
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[20px]">barcode_scanner</span>
+</div>
+<input class="w-full pl-10 pr-24 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline-variant/80" id="inventorySearch" placeholder="Scan barcode, enter SKU (e.g. PWR-BAS-20K), or product name..." type="text"/>
+<div class="absolute inset-y-0 right-2 flex items-center">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">F3 Scan</span>
+</div>
+</div>
+<!-- Filter Selectors -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<!-- Category Filter -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-outline text-[18px]">category</span>
+<select class="bg-transparent font-headline-sm text-headline-sm text-on-surface focus:outline-none cursor-pointer" id="filterCategory">
+<option value="ALL">All Categories</option>
+<option value="Audio">Audio (28)</option>
+<option value="Accessories">Accessories (34)</option>
+<option value="Power">Power &amp; Cables (41)</option>
+<option value="Tablets">Tablets (14)</option>
+<option value="Storage">Storage (25)</option>
+</select>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-outline text-[18px]">filter_alt</span>
+<select class="bg-transparent font-headline-sm text-headline-sm text-on-surface focus:outline-none cursor-pointer" id="filterStatus">
+<option value="ALL">Stock Status: All</option>
+<option value="IN_STOCK">In Stock (128)</option>
+<option value="LOW_STOCK">Low Stock (&lt; 10)</option>
+<option value="OUT_OF_STOCK">Out of Stock (2)</option>
+</select>
+</div>
+<!-- Location Filter -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-outline text-[18px]">warehouse</span>
+<select class="bg-transparent font-headline-sm text-headline-sm text-on-surface focus:outline-none cursor-pointer" id="filterLocation">
+<option value="ALL">All Locations</option>
+<option value="Aisle 1">Aisle 1 (Audio)</option>
+<option value="Aisle 2">Aisle 2 (Accessories)</option>
+<option value="Aisle 3">Aisle 3 (Storage)</option>
+<option value="Aisle 4">Aisle 4 (Power)</option>
+<option value="Display">Front Displays</option>
+<option value="Safe Cage">Safe Cage 1</option>
+</select>
+</div>
+<!-- Reset Filter Button -->
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" onclick="resetFilters()" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Secondary Tag Strip for quick counts -->
+<div class="flex items-center justify-between text-on-surface-variant text-body-sm font-body-sm pt-space-xs">
+<div class="flex items-center gap-space-md">
+<span class="font-label-code text-label-code">SHOWING: <strong class="text-on-surface font-label-numeric-sm">8 of 142</strong> SKUs</span>
+<div class="hidden sm:flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-label-code text-label-code text-emerald-700">Stock Healthy (90.1%)</span>
+</div>
+<div class="hidden sm:flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="font-label-code text-label-code text-amber-700">Reorder Queue (8.4%)</span>
+</div>
+<div class="hidden sm:flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="font-label-code text-label-code text-red-600">Stock Depleted (1.5%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1 font-label-code text-label-code text-primary hover:underline" type="button">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+<span>Batch Stock Audit Mode</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inventory Master Table Container -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-headline-sm text-headline-sm uppercase text-[11px] tracking-wider">
+<th class="py-3 px-space-md font-semibold">Product &amp; SKU</th>
+<th class="py-3 px-space-md font-semibold">Category</th>
+<th class="py-3 px-space-md font-semibold">Bin / Shelf</th>
+<th class="py-3 px-space-md font-semibold text-right">Cost / Unit</th>
+<th class="py-3 px-space-md font-semibold text-right">Retail Price</th>
+<th class="py-3 px-space-md font-semibold text-right">Current Stock</th>
+<th class="py-3 px-space-md font-semibold text-right">Reorder Threshold</th>
+<th class="py-3 px-space-md font-semibold text-center">Status</th>
+<th class="py-3 px-space-md font-semibold">Last Restocked</th>
+<th class="py-3 px-space-md font-semibold text-right">Operations</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md font-body-md text-on-surface" id="inventoryTableBody">
+<!-- Row 1: Sony WH-1000XM5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">headphones</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Sony WH-1000XM5 Wireless</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: AUD-SNY-XM5 • UPC: 027242923973</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Audio</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">shelves</span>
+<span>Aisle 1, B-02</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$210.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$349.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">5 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  In Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 12, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="openAdjustmentModal('AUD-SNY-XM5', 'Sony WH-1000XM5 Wireless', 6)" title="Adjust Quantity" type="button">
+                    Adjust ±
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="View Audit Ledger" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Keychron K2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-amber-50/20">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">keyboard</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Keychron K2 Wireless Keyboard</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: ACC-KCH-K2 • UPC: 840134710294</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Accessories</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">shelves</span>
+<span>Aisle 2, C-04</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$52.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$89.00</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-amber-700">3</span>
+<span class="font-body-sm text-body-sm text-amber-700 ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">10 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-ping"></span>
+                  Low Stock: 3
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Sep 28, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-headline-sm text-headline-sm transition-colors shadow-sm" type="button">
+                    Reorder Now
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="openAdjustmentModal('ACC-KCH-K2', 'Keychron K2 Wireless Keyboard', 3)" title="Quick Adjust" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Baseus 20k Power Bank (Out of Stock) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-red-50/25">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-red-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[22px]">battery_alert</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-error truncate">Baseus 20,000mAh Power Bank 65W</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: PWR-BAS-20K • UPC: 695315629104</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Power</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">shelves</span>
+<span>Aisle 4, A-09</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$31.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$54.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-lg font-bold text-error">0</span>
+<span class="font-body-sm text-body-sm text-error ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">15 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 font-label-badge text-label-badge uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-red-600"></span>
+                  Out of Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 01, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-error text-on-error hover:bg-error-container hover:text-on-error-container font-headline-sm text-headline-sm transition-colors shadow-sm" type="button">
+                    Order Urgent
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="openAdjustmentModal('PWR-BAS-20K', 'Baseus 20,000mAh Power Bank 65W', 0)" title="Quick Adjust" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Anker 65W GaN Charger -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">electrical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Anker 65W GaN Fast Charger Trio</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: PWR-65-ANK • UPC: 848061039841</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Power</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">shelves</span>
+<span>Aisle 4, A-11</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$22.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$39.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">42</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">15 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  In Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 14, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="openAdjustmentModal('PWR-65-ANK', 'Anker 65W GaN Fast Charger Trio', 42)" type="button">
+                    Adjust ±
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Apple AirPods Pro 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">earbuds</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Apple AirPods Pro (2nd Generation)</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: AUD-APL-APP2 • UPC: 194253397168</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Audio</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Safe Cage 1</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$165.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$249.00</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">8 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  In Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 10, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="openAdjustmentModal('AUD-APL-APP2', 'Apple AirPods Pro (2nd Generation)', 18)" type="button">
+                    Adjust ±
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Samsung Galaxy Tab S9 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">tablet_mac</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Samsung Galaxy Tab S9 128GB Wi-Fi</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: TAB-SAM-S9 • UPC: 887276778401</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Tablets</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">storefront</span>
+<span>Display 2</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$480.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$699.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">4 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  In Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 05, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="openAdjustmentModal('TAB-SAM-S9', 'Samsung Galaxy Tab S9 128GB', 9)" type="button">
+                    Adjust ±
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Belkin 2m USB-C Cable -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">cable</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Belkin BoostCharge Pro USB-C 2m</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: CBL-BLK-2M • UPC: 745883832104</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Cables</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">grid_view</span>
+<span>Pegboard 3</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$7.50</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$19.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">65</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">20 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  In Stock
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 15, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="openAdjustmentModal('CBL-BLK-2M', 'Belkin BoostCharge Pro USB-C 2m', 65)" type="button">
+                    Adjust ±
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 8: WD 2TB NVMe SSD -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-amber-50/20">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">save</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Western Digital Black SN850X 2TB NVMe</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SKU: STR-WD-2TB • UPC: 718037891334</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code text-label-code">Storage</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">shelves</span>
+<span>Aisle 3, D-01</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$85.00</td>
+<td class="py-3 px-space-md text-right font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$139.99</td>
+<td class="py-3 px-space-md text-right">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-amber-700">4</span>
+<span class="font-body-sm text-body-sm text-amber-700 ml-0.5">units</span>
+</td>
+<td class="py-3 px-space-md text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">6 units</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-badge text-label-badge uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-ping"></span>
+                  Low Stock: 4
+                </span>
+</td>
+<td class="py-3 px-space-md font-label-code text-label-code text-on-surface-variant">Oct 02, 2024</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-headline-sm text-headline-sm transition-colors shadow-sm" type="button">
+                    Reorder Now
+                  </button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="openAdjustmentModal('STR-WD-2TB', 'Western Digital Black SN850X 2TB NVMe', 4)" title="Quick Adjust" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Controls -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant">
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm">
+<span>Rows per ledger page:</span>
+<select class="bg-surface-container px-2 py-1 rounded font-label-numeric-sm text-label-numeric-sm text-on-surface focus:outline-none">
+<option>10</option>
+<option selected="">25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span class="font-label-code text-label-code ml-2">Displaying 1 - 8 of 142 SKUs</span>
+</div>
+<div class="flex items-center gap-1 font-label-code text-label-code">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-variant text-on-surface disabled:opacity-50" disabled="" type="button">
+            Previous
+          </button>
+<button class="px-3 py-1 rounded bg-primary-container text-on-primary font-bold" type="button">1</button>
+<button class="px-3 py-1 rounded hover:bg-surface-container text-on-surface" type="button">2</button>
+<button class="px-3 py-1 rounded hover:bg-surface-container text-on-surface" type="button">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1 rounded hover:bg-surface-container text-on-surface" type="button">6</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-variant text-on-surface" type="button">
+            Next
+          </button>
+</div>
+</div>
+</div>
+<!-- Live Stock Audit & Cycle Count Activity Strip -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Recent Ledger Adjustments -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Recent Stock Adjustments</span>
+</div>
+<span class="font-label-code text-label-code text-primary cursor-pointer hover:underline">Full Log</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between py-1.5 px-2 rounded bg-surface-container-low text-body-sm font-body-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">CBL-BLK-2M (+15 units)</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Intake PO #PO-8821 • D. Vance</span>
+</div>
+<span class="font-label-code text-label-code text-emerald-600 font-semibold">+15 IN</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2 rounded bg-surface-container-low text-body-sm font-body-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">AUD-SNY-XM5 (-1 unit)</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Damaged Packaging RMA • R. Torres</span>
+</div>
+<span class="font-label-code text-label-code text-error font-semibold">-1 DEFECT</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2 rounded bg-surface-container-low text-body-sm font-body-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">PWR-BAS-20K (-2 units)</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Stock Count Variance Reconciliation</span>
+</div>
+<span class="font-label-code text-label-code text-amber-700 font-semibold">-2 SHRINK</span>
+</div>
+</div>
+</div>
+<!-- Warehouse Bin Occupancy Widget -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">warehouse</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Warehouse Capacity</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">78.4% Full</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="w-full bg-surface-container rounded-full h-3 overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 55%" title="Assigned &amp; Occupied: 55%"></div>
+<div class="bg-amber-500 h-full" style="width: 23%" title="Buffer &amp; Reserved: 23%"></div>
+<div class="bg-surface-container-high h-full" style="width: 22%" title="Available: 22%"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center pt-space-xs">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-code text-label-code text-on-surface-variant block uppercase">Aisles 1-5</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">420 / 500</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-code text-label-code text-on-surface-variant block uppercase">Safe Cage</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">32 / 40</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-code text-label-code text-on-surface-variant block uppercase">Display Bins</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">88 / 120</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Supplier Dispatch Status -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Inbound Reorder Shipments</span>
+</div>
+<span class="font-label-badge text-label-badge bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded">2 Transit</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">PO #99214 • Baseus Direct</span>
+<span class="font-label-code text-label-code text-on-surface-variant">50x PWR-BAS-20K • ETA: Tomorrow 09:00</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">PO #99201 • Keychron Logistics</span>
+<span class="font-label-code text-label-code text-on-surface-variant">25x ACC-KCH-K2 • ETA: Oct 22</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Stock Adjustment Modal Overlay -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="stockAdjustModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full shadow-xl overflow-hidden animate-in fade-in zoom-in duration-150">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-inverse-surface text-inverse-on-surface flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[24px]">tune</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-white">Reconcile Stock Level</span>
+<span class="font-label-code text-label-code text-primary-fixed-dim" id="modalSkuSubtitle">SKU: AUD-SNY-XM5</span>
+</div>
+</div>
+<button class="p-1 rounded hover:bg-white/10 text-inverse-on-surface transition-colors" onclick="closeAdjustmentModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg flex flex-col gap-space-md" id="stockAdjustForm" onsubmit="handleAdjustmentSubmit(event)">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Target Product</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold truncate" id="modalProductName">Sony WH-1000XM5 Wireless</h2>
+</div>
+<div class="grid grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase">Current System Qty</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold" id="modalCurrentQty">6</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase">New Projected Qty</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-bold" id="modalProjectedQty">6</span>
+</div>
+</div>
+<!-- Adjustment Reason Preset Segmented Controls -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface-variant uppercase">Adjustment Direction &amp; Reason</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-1 rounded-lg bg-emerald-50 text-emerald-800 font-headline-sm text-headline-sm text-center font-semibold hover:bg-emerald-100 transition-all" id="btnTypeAdd" onclick="setAdjustType('ADD', 1)" type="button">
+              + Restock / Found
+            </button>
+<button class="py-2 px-1 rounded-lg bg-surface-container text-on-surface font-headline-sm text-headline-sm text-center font-semibold hover:bg-surface-variant transition-all" id="btnTypeDamage" onclick="setAdjustType('DAMAGE', -1)" type="button">
+              - Defect / Damage
+            </button>
+<button class="py-2 px-1 rounded-lg bg-surface-container text-on-surface font-headline-sm text-headline-sm text-center font-semibold hover:bg-surface-variant transition-all" id="btnTypeShrink" onclick="setAdjustType('SHRINK', -1)" type="button">
+              - Store Internal / Lost
+            </button>
+</div>
+</div>
+<!-- Delta Quantity Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface-variant uppercase" for="adjustQuantity">Adjustment Delta (+/- Units)</label>
+<div class="flex items-center gap-space-sm">
+<button class="w-12 h-10 rounded-lg bg-surface-container text-on-surface font-bold text-lg hover:bg-surface-variant transition-colors flex items-center justify-center" onclick="stepQty(-1)" type="button">-</button>
+<input class="flex-1 h-10 text-center font-label-numeric-md text-label-numeric-md rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="adjustDeltaInput" max="500" min="1" oninput="calculateProjectedQty()" type="number" value="1"/>
+<button class="w-12 h-10 rounded-lg bg-surface-container text-on-surface font-bold text-lg hover:bg-surface-variant transition-colors flex items-center justify-center" onclick="stepQty(1)" type="button">+</button>
+</div>
+</div>
+<!-- Audit Reason Note Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface-variant uppercase" for="adjustNote">Auditor Note / Incident Reference</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline-variant" id="adjustNote" placeholder="e.g., Physical cycle count verification; damaged box sent to returns" type="text"/>
+</div>
+<!-- Modal Footer Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-headline-sm text-headline-sm transition-colors" onclick="closeAdjustmentModal()" type="button">
+            Cancel
+          </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold transition-all shadow-md" type="submit">
+            Commit Stock Ledger
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50" id="inventoryToast">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md" id="toastMessage">Stock adjusted successfully.</span>
+</div>
+</div>
+<script>
+  let activeSku = '';
+  let currentBaseQty = 0;
+  let adjustMultiplier = 1; // +1 or -1
+
+  function openAdjustmentModal(sku, name, qty) {
+    activeSku = sku;
+    currentBaseQty = qty;
+    adjustMultiplier = 1;
+
+    document.getElementById('modalSkuSubtitle').innerText = 'SKU: ' + sku;
+    document.getElementById('modalProductName').innerText = name;
+    document.getElementById('modalCurrentQty').innerText = qty;
+    document.getElementById('adjustDeltaInput').value = '1';
+    document.getElementById('adjustNote').value = '';
+
+    setAdjustType('ADD', 1);
+    document.getElementById('stockAdjustModal').classList.remove('hidden');
+  }
+
+  function closeAdjustmentModal() {
+    document.getElementById('stockAdjustModal').classList.add('hidden');
+  }
+
+  function setAdjustType(type, multiplier) {
+    adjustMultiplier = multiplier;
+    
+    // Reset button styles
+    const btnAdd = document.getElementById('btnTypeAdd');
+    const btnDmg = document.getElementById('btnTypeDamage');
+    const btnShrink = document.getElementById('btnTypeShrink');
+
+    [btnAdd, btnDmg, btnShrink].forEach(b => {
+      b.className = "py-2 px-1 rounded-lg bg-surface-container text-on-surface font-headline-sm text-headline-sm text-center font-semibold hover:bg-surface-variant transition-all";
+    });
+
+    if (type === 'ADD') {
+      btnAdd.className = "py-2 px-1 rounded-lg bg-emerald-100 text-emerald-900 font-headline-sm text-headline-sm text-center font-semibold transition-all";
+    } else if (type === 'DAMAGE') {
+      btnDmg.className = "py-2 px-1 rounded-lg bg-amber-100 text-amber-900 font-headline-sm text-headline-sm text-center font-semibold transition-all";
+    } else if (type === 'SHRINK') {
+      btnShrink.className = "py-2 px-1 rounded-lg bg-red-100 text-red-900 font-headline-sm text-headline-sm text-center font-semibold transition-all";
+    }
+
+    calculateProjectedQty();
+  }
+
+  function stepQty(amount) {
+    const input = document.getElementById('adjustDeltaInput');
+    let val = parseInt(input.value, 10) || 1;
+    val = Math.max(1, val + amount);
+    input.value = val;
+    calculateProjectedQty();
+  }
+
+  function calculateProjectedQty() {
+    const delta = parseInt(document.getElementById('adjustDeltaInput').value, 10) || 0;
+    const projected = Math.max(0, currentBaseQty + (delta * adjustMultiplier));
+    const projectedElem = document.getElementById('modalProjectedQty');
+    projectedElem.innerText = projected;
+    if (projected < currentBaseQty) {
+      projectedElem.className = 'font-label-numeric-lg text-label-numeric-lg text-amber-700 font-bold';
+    } else {
+      projectedElem.className = 'font-label-numeric-lg text-label-numeric-lg text-primary font-bold';
+    }
+  }
+
+  function handleAdjustmentSubmit(e) {
+    e.preventDefault();
+    const note = document.getElementById('adjustNote').value;
+    const projected = document.getElementById('modalProjectedQty').innerText;
+
+    closeAdjustmentModal();
+    showToast(`SKU ${activeSku} updated to ${projected} units.`);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('inventoryToast');
+    document.getElementById('toastMessage').innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  function resetFilters() {
+    document.getElementById('inventorySearch').value = '';
+    document.getElementById('filterCategory').value = 'ALL';
+    document.getElementById('filterStatus').value = 'ALL';
+    document.getElementById('filterLocation').value = 'ALL';
+    showToast('Filters reset to default.');
+  }
+
+  // Keyboard shortcut listener for F3 or scanner focus
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'F3') {
+      e.preventDefault();
+      const input = document.getElementById('inventorySearch');
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+  });
+</script></main></div></body></html>

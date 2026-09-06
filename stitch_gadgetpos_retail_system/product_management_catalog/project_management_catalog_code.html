@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary-fixed-variant":"#0039b5","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","surface-container-lowest":"#ffffff","primary":"#0037b0","tertiary":"#004870","on-tertiary-fixed":"#001d31","on-surface":"#0b1c30","tertiary-container":"#006194","surface-tint":"#2151da","background":"#f8f9ff","outline-variant":"#c4c5d7","outline":"#747686","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-tertiary-container":"#b2d9ff","primary-fixed":"#dce1ff","on-secondary-fixed":"#131b2e","surface-variant":"#d3e4fe","inverse-surface":"#213145","on-primary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-primary-fixed":"#001551","on-surface-variant":"#434655","on-tertiary":"#ffffff","surface":"#f8f9ff","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","secondary-fixed":"#dae2fd","surface-container-high":"#dce9ff","primary-fixed-dim":"#b7c4ff","on-background":"#0b1c30","on-error":"#ffffff","inverse-primary":"#b7c4ff","error-container":"#ffdad6","surface-dim":"#cbdbf5","secondary-container":"#dae2fd","on-primary-container":"#cad3ff","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","error":"#ba1a1a","on-error-container":"#93000a","surface-container-low":"#eff4ff","surface-container-highest":"#d3e4fe","surface-container":"#e5eeff","primary-container":"#1d4ed8","secondary":"#565e74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","pos-cart-width":"24rem","space-2xl":"2rem","pos-sidebar-width":"16rem","space-sm":"0.5rem","touch-target-min":"2.75rem","space-xl":"1.5rem","space-md":"0.75rem","space-3xl":"3rem","gutter-default":"1rem","space-xs":"0.25rem","space-lg":"1rem"},"fontFamily":{"headline-lg":["Hanken Grotesk"],"label-numeric-lg":["JetBrains Mono"],"display-lg":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"label-numeric-md":["JetBrains Mono"],"body-lg":["Hanken Grotesk"],"label-numeric-sm":["JetBrains Mono"],"label-badge":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"label-code":["JetBrains Mono"],"body-sm":["Hanken Grotesk"]},"fontSize":{"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-numeric-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-numeric-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-numeric-sm":["13px",{"lineHeight":"18px","fontWeight":"500"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-code":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-pos-sidebar-width bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="px-space-lg py-space-md bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="GadgetPOS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHRN5qnZKMIEFgXyrTQ1wmXUti3V8gMGw50T0FUKCH8zveFtvml03bnicmURqX-yet76g1M-ri23SL4VfnmXEuv8RCNgkMI_RLV9wDfk3xn5iwbAGK5ZeBh6M94TcvDz6Ev310QjFEKveJW3siXHdyMEwCo_Fwu4_J4AjvkUV90C3MsqdsL-opLEF4Ivbbr941n0Sr5bQxvHMWHDAuvriWBAPCD2gZDT5RdbaW2jmOIupd0JikLxV8spM"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest tracking-tight">GadgetPOS</span><span class="font-label-code text-label-code text-primary-fixed-dim uppercase tracking-wider">Terminal OS</span></div></div><div class="mt-space-md p-space-sm bg-surface-variant/10 rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">storefront</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">Downtown Tech Hub #04</span></div><div class="flex items-center justify-between mt-space-xs"><span class="font-label-code text-label-code text-outline-variant">Reg: POS-02</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-950/60"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-code text-label-code text-emerald-300">Online</span></div></div></div></div><nav class="mt-space-sm px-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="point-of-sale" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span class="font-body-md text-body-md">Point of Sale</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary font-semibold" data-path="products" href="#"><span class="material-symbols-outlined text-[20px]">devices_other</span><span class="font-body-md text-body-md">Products</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-body-md text-body-md">Inventory</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="sales-and-transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Sales &amp; Transactions</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="reports-and-analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Reports &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="font-body-md text-body-md">User Management</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-inverse-on-surface/80 hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-md m-space-sm bg-surface-variant/10 rounded-xl"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-label-code text-label-code text-outline-variant uppercase">Cashier Active</span><span class="font-body-sm text-body-sm font-semibold text-surface-container-lowest truncate">David Vance</span><span class="font-label-code text-label-code text-primary-fixed-dim truncate">Admin / Manager</span></div></div></div></aside><div class="pl-pos-sidebar-width min-h-screen flex flex-col"><header class="fixed top-0 left-pos-sidebar-width right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">store</span><span class="font-body-sm text-body-sm">Register 02</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Console</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">barcode_scanner</span><input class="w-full pl-9 pr-16 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline/70" placeholder="Scan barcode or search SKU [Ctrl+K]..." type="text"/><span class="absolute right-2 font-label-code text-label-code px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Ctrl+K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">point_of_sale</span><div class="flex flex-col text-left"><span class="font-label-code text-label-code text-on-surface-variant">Shift #4092 • Open</span><span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">$250.00 Drawer</span></div></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span class="font-body-sm text-body-sm font-semibold hidden sm:inline">New Sale</span></button><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full font-label-badge text-[10px] flex items-center justify-center font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="System Health" type="button"><span class="material-symbols-outlined text-[20px]">sensors</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Toggle Fullscreen" type="button"><span class="material-symbols-outlined text-[20px]">fullscreen</span></button></div><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">David Vance</span><span class="font-label-code text-label-code text-on-surface-variant">Store Admin</span></div><button class="p-1 text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Top Utility Bar & Filter Panel -->
+<section class="px-space-xl pt-space-lg pb-space-md bg-surface-container-low flex flex-col gap-space-md">
+<!-- Breadcrumb & Actions Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">devices_other</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Product Catalog</span>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold">1,428 SKUs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage retail pricing, barcodes, hardware inventory, and stock health thresholds.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span class="font-body-sm text-body-sm font-semibold">Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">upload_file</span>
+<span class="font-body-sm text-body-sm font-semibold">Batch Import</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary shadow-md transition-all" id="openModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="font-body-md text-body-md font-semibold">+ Add New Product</span>
+</button>
+</div>
+</div>
+<!-- Filters & Live Search Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-center bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<!-- Search Input -->
+<div class="md:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none" placeholder="Search by name, SKU, or UPC..." type="text" value="Logitech MX Master"/>
+</div>
+<!-- Category Filter -->
+<div class="md:col-span-2">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option value="all">All Categories</option>
+<option selected="" value="acc">Computer Accessories</option>
+<option value="audio">Audio &amp; Headphones</option>
+<option value="keyboards">Keyboards &amp; Mice</option>
+<option value="power">Cables &amp; Power</option>
+<option value="mobile">Mobile &amp; Tablets</option>
+</select>
+</div>
+<!-- Brand Filter -->
+<div class="md:col-span-2">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option value="all">All Brands</option>
+<option selected="" value="logitech">Logitech</option>
+<option value="keychron">Keychron</option>
+<option value="sony">Sony</option>
+<option value="anker">Anker</option>
+<option value="apple">Apple</option>
+<option value="samsung">Samsung</option>
+</select>
+</div>
+<!-- Stock Status Filter -->
+<div class="md:col-span-2">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option value="all">Stock: Any Status</option>
+<option value="in-stock">In Stock (&gt;5)</option>
+<option value="low-stock">Low Stock Alerts (≤5)</option>
+<option value="out">Out of Stock (0)</option>
+</select>
+</div>
+<!-- Summary Quick Metrics -->
+<div class="md:col-span-2 flex items-center justify-end gap-space-xs text-right">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase">Filtered:</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">6 of 1,428</span>
+</div>
+</div>
+</section>
+<!-- Product Catalog Table Container -->
+<section class="p-space-xl">
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-headline-sm text-[11px] uppercase tracking-wider select-none">
+<th class="py-3.5 px-4 font-semibold">Product Name &amp; Model</th>
+<th class="py-3.5 px-3 font-semibold">SKU</th>
+<th class="py-3.5 px-3 font-semibold">Barcode (UPC)</th>
+<th class="py-3.5 px-3 font-semibold">Category</th>
+<th class="py-3.5 px-3 font-semibold">Brand</th>
+<th class="py-3.5 px-3 font-semibold text-right">Cost</th>
+<th class="py-3.5 px-3 font-semibold text-right">Price</th>
+<th class="py-3.5 px-3 font-semibold text-right">Margin</th>
+<th class="py-3.5 px-3 font-semibold text-right">Stock</th>
+<th class="py-3.5 px-3 font-semibold text-center">Status</th>
+<th class="py-3.5 px-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Logitech MX Master 3S (Currently Editing) -->
+<tr class="bg-primary-fixed/30 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up commercial product shot of a sleek dark graphite Logitech MX Master 3S ergonomic mouse isolated on a smooth matte desk with soft directional studio light, high clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQrhDHNI6StVgaEhIf20aDGFhFARkgY_rDZgwVk4UCQcdULB_I_lFlZMLuaCNBaFilyrgPuWXm9_bgNFIKFYOKn0WvoS-BUjdzFkZ6P11rx-gFt1Cubp13CFNk0-6p0EaHDUciiTKiDjpkevg5FCUt3VXKg3ws8Y3hdb_OfQy9ckn_JCmu5NCAs2qH9S2zgMo9d_4HOx620Osk9-de-FAB1e_C_H30O_QqjPSF0uf6_n-USoszLYG8"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Logitech MX Master 3S</span>
+<span class="font-label-code text-[10px] px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-bold">EDITING</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Wireless Performance Mouse - Graphite</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">ACC-LOG-MX3S-GR</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">097855175297</td>
+<td class="py-3 px-3 text-on-surface-variant">Accessories</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Logitech</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$58.50</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$99.99</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">41.5%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">14</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  IN STOCK
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-primary hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Keychron Q1 Pro -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Keychron Q1 Pro mechanical custom keyboard anodized space grey aluminum chassis with RGB backlight and double-shot keycaps, crisp studio top angle view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBffcgFluaMyEnV4ULZjBkeJiweRZr1Aq4PBZ_iaDBXyk511ky_acLVYio3w6ZeaCh2bCHU_r11JsCabzVCXJ7PFy1RelevosBrj9SjKwTxXt89Jyk8nZ4ljqq9y-cCWThXKmUnmb--vUjuFSJM_qmjfHbxxWuNVWDuquathzSySiIy3PzjryoXFGvj72WFfiJcLUVgQ6nqtC4DB-2qbV6HsKJ39zNMWYreUrQF-ROAufThb18GjGWK"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Keychron Q1 Pro QMK Wireless</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">75% Layout Custom Mechanical, Banana Switches</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">KBD-KEY-Q1P-GR</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">697266159182</td>
+<td class="py-3 px-3 text-on-surface-variant">Keyboards</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Keychron</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$135.00</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$199.00</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">32.2%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-amber-600">3</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  LOW STOCK (3)
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Sony WH-1000XM5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Sony WH-1000XM5 active noise canceling wireless headphones in silver finish resting gracefully on wooden headphone stand, soft warm ambient fill lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGkVLYjK-Maskr69jQr_GSW3A25PdQnv0b_vGefwFUOdf-EZjNcg6vixd1XCvLEOMnn0cKnda5jxRE6WE-_FUD2ZRO5voa_lDJ_JYviu6W4tzYlQMi5Icxn_n29x7tt7sqD4tpTPHV2O7o3BGzE6znRSY1hD2nkw2aqBF2zmTOqdxAWA-V9K85Y-ZZyuGzKazr1td2DyreESdZJN71p8G2-iYOxQq7SgwH_jXqZnchf2ahp9Lo-Flv"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Sony WH-1000XM5 ANC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Wireless Noise-Cancelling Headphones - Silver</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">AUD-SNY-WH5-SLV</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">027242923980</td>
+<td class="py-3 px-3 text-on-surface-variant">Audio</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Sony</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$260.00</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$398.00</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">34.7%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">22</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  IN STOCK
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Anker Prime 100W GaN Charger -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Anker Prime 100W 3-port compact GaN fast wall charger matte black metallic finish showing foldable pins and USB-C ports with precision detailing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyMnLihq1fL3cwJ5VgGMOwj0Hqswh6OTqgHemcpGW2msTu9JwpTy3AMGMO6EdXDgOfnpSGgwgkv8vJT0sRdN5nzW9UkOyL5o7ktm9EybgMUGpUT-5PD7oNYKL1Azq8YRAEJcyGZADo7fIPMaeEvECsWEWegfeY4UmUnCuV6i94LsZhy1Zo_lVfs5i-zjjcUAhejFxYdf_1F2xWmivPAEyjCJJz7q2A9F9SY9mqFnvlh7TcKAbh0-OK"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Anker Prime 100W GaN</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">3-Port Compact Fast Wall Power Adapter</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">PWR-ANK-100W-BLK</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">194644140228</td>
+<td class="py-3 px-3 text-on-surface-variant">Power &amp; Cables</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Anker</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$38.00</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$74.99</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">49.3%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">45</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  IN STOCK
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Apple Magic Keyboard with Touch ID -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Apple Magic Keyboard with Touch ID and Numeric Keypad white keys and bead-blasted aluminum frame top down studio lighting on light surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO-EGD892sWu-OE_bqyzJB4NYGPP6D6E66Phcfa4L8--odUs8bX-Apv1tQNh9o2WTw9TyTtwP5LMOa6n7kHgA0eVEV8qLSc1APnSI3KKWcBiM7b_VD3ivPVyXQi27sotI6f9hb7tSfVR3mSyPplkeZhDu8wUqHPALrMdOQtII6Dcins-HyMMQIhQU9_IUxNJr2g7ImFvXlZKmqFFBRwjtdOXEuBl_miAbHXGxaaeyv3EkxW83q8idn"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Apple Magic Keyboard</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Touch ID &amp; Numeric Keypad - Silver</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">KBD-APL-MKBT-SLV</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">194252544273</td>
+<td class="py-3 px-3 text-on-surface-variant">Accessories</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Apple</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$139.00</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$179.00</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">22.3%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-error">0</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  OUT OF STOCK
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Samsung T9 Portable SSD 2TB -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Samsung T9 2TB portable external solid state drive black textured rugged rubberized body angled hero commercial shot with USB-C connector" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP-h0RHsoHMVGvcqUrg400W4Yl-eFQFLBsmEJ6QfYO7vPF-hglflTlhzaJlQBMLlNl4eI2YVlR-1tBXv5H7Dn2FvJIJz6loydX1wS4oq3sz8DVdOSG89ZUexwQLp14GqS4gfaBjPYEleKba1krSX0Gt4ERTaarmBFUjfn5_HR80AFrMSkss9rYpjK5zoDCeYkYpmEev_PddeLC17XhNGFevd48qPBcHx9ScOWX2fDy-rZ89dBsH3EV"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Samsung T9 Shield SSD 2TB</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">USB 3.2 Gen 2x2 Up to 2000MB/s Black</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface-variant">STR-SAM-T9-2TB</td>
+<td class="py-3 px-3 font-label-code text-label-code text-on-surface">887276778401</td>
+<td class="py-3 px-3 text-on-surface-variant">Storage</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Samsung</td>
+<td class="py-3 px-3 text-right font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">$145.00</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$239.99</td>
+<td class="py-3 px-3 text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">39.6%</span>
+</td>
+<td class="py-3 px-3 text-right font-label-numeric-md text-label-numeric-md font-semibold text-on-surface">8</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  IN STOCK
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container" title="Duplicate SKU" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/50" title="Deactivate" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-3 bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span>Displaying 1-6 of 1,428 items</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 bg-surface-container rounded">Page 1 of 238</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-outline-variant cursor-not-allowed" type="button">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-outline-variant cursor-not-allowed" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded-lg bg-primary-container text-on-primary font-bold font-label-numeric-sm">1</span>
+<button class="px-3 py-1 rounded-lg bg-surface-container-lowest hover:bg-surface-container font-label-numeric-sm" type="button">2</button>
+<button class="px-3 py-1 rounded-lg bg-surface-container-lowest hover:bg-surface-container font-label-numeric-sm" type="button">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1 rounded-lg bg-surface-container-lowest hover:bg-surface-container font-label-numeric-sm" type="button">238</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- MODAL DIALOG OVERLAY: Add / Edit Product (#PRD-0492) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md sm:p-space-lg bg-inverse-surface/60 backdrop-blur-sm overflow-y-auto" id="productModal">
+<div class="relative w-full max-w-5xl my-auto bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[942px]">
+<!-- Modal Header -->
+<div class="px-space-xl py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface truncate">Product Details</span>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">#PRD-0492</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> ACTIVE
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Logitech MX Master 3S Wireless Mouse - Graphite</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/40 transition-colors" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Navigation Segment Tabs -->
+<div class="px-space-xl bg-surface-container-lowest flex items-center gap-space-sm border-b border-surface-container">
+<button class="flex items-center gap-2 py-3 px-3 text-primary font-headline-sm text-headline-sm border-b-2 border-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+          Basic Info
+        </button>
+<button class="flex items-center gap-2 py-3 px-3 text-on-surface-variant hover:text-on-surface font-headline-sm text-headline-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+          Pricing &amp; Inventory
+        </button>
+<button class="flex items-center gap-2 py-3 px-3 text-on-surface-variant hover:text-on-surface font-headline-sm text-headline-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+          Barcode &amp; Suppliers
+        </button>
+</div>
+<!-- Modal Body (Two-Column Responsive Form Layout) -->
+<div class="p-space-xl overflow-y-auto space-y-space-lg flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Core Identity, Taxonomy, and Image -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Product Title -->
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center justify-between">
+<span>Product Name <span class="text-error">*</span></span>
+<span class="font-label-code text-[11px] text-outline">51 / 120 chars</span>
+</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none" type="text" value="Logitech MX Master 3S Wireless Mouse - Graphite"/>
+</div>
+<!-- SKU & Barcode Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">SKU (Stock Keeping Unit) <span class="text-error">*</span></label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-code text-label-code uppercase tracking-wider focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none" type="text" value="ACC-LOG-MX3S-GR"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Barcode / UPC <span class="text-error">*</span></label>
+<button class="font-label-code text-[10px] text-primary hover:underline font-bold flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[12px]">cached</span> Auto-Gen
+                  </button>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">barcode</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-code text-label-code focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none" type="text" value="097855175297"/>
+</div>
+</div>
+</div>
+<!-- Category & Brand Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Category</label>
+<div class="relative">
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:ring-2 focus:ring-primary outline-none cursor-pointer appearance-none">
+<option selected="">Computer Accessories</option>
+<option>Keyboards &amp; Input</option>
+<option>Cables &amp; Adapters</option>
+<option>Audio Peripherals</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Brand / Manufacturer</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none" type="text" value="Logitech"/>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Marketing &amp; POS Receipt Description</label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none resize-none" rows="3">Advanced ergonomic wireless mouse with quiet clicks, 8K DPI sensor, and MagSpeed scrolling. Compatible with macOS and Windows via Logi Bolt.</textarea>
+</div>
+<!-- Media Upload Dropzone & Thumbnails -->
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Product Imagery</label>
+<div class="flex items-center gap-space-md">
+<!-- Current Active Image -->
+<div class="relative group w-24 h-24 rounded-xl overflow-hidden bg-surface-container-high shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="High quality commercial studio photograph of the Logitech MX Master 3S graphite wireless mouse on clean reflective white glass with soft shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD_6eKfPoIbVlA1TJuWVvwvu3J-RkPCMf3aQyqufi-O3DJU6fyDQ94GD8_em6GICvUNr6ZgPNIp-MwuyfgT-jJHL8vevVCnGdWH-oBTiQNRICYplDlzGLdz6lm0CYrku3avkw2e5Iy8cY489NCzlohSq8veXHHhiXQ0CrVgyb6s624xrhGL6WHt3rbVqw3V4ndNYcosPCBsHWyQ8viJdfbWSCLqVMFIarBH7cCYN3sUIelFPiZmo85"/>
+<span class="absolute top-1 left-1 px-1 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-code text-[9px] font-bold">PRIMARY</span>
+<div class="absolute inset-0 bg-inverse-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container-lowest text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+<button class="p-1 rounded bg-surface-container-lowest text-error" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- Dropzone Area -->
+<div class="flex-1 h-24 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col items-center justify-center gap-1 cursor-pointer p-2 text-center">
+<span class="material-symbols-outlined text-primary text-[24px]">cloud_upload</span>
+<p class="font-body-sm text-body-sm font-medium text-on-surface"><span class="text-primary font-semibold">Click to upload</span> or drag and drop</p>
+<p class="font-label-code text-[10px] text-on-surface-variant">PNG, JPG, or WEBP up to 5MB (1000x1000 recommended)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Financial Margins & Inventory Controls -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Pricing & Gross Margin Calculator Box -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">calculate</span>
+                  Financials &amp; Margin
+                </span>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Healthy Margin</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Cost Price ($)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-numeric-sm text-on-surface-variant">$</span>
+<input class="w-full pl-7 pr-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-semibold text-on-surface outline-none focus:ring-2 focus:ring-primary" type="text" value="58.50"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Selling Price ($)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-numeric-sm text-on-surface-variant">$</span>
+<input class="w-full pl-7 pr-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-bold text-on-surface outline-none focus:ring-2 focus:ring-primary" type="text" value="99.99"/>
+</div>
+</div>
+</div>
+<!-- Calculated Gross Margin Callout -->
+<div class="p-3 rounded-lg bg-surface-container-lowest flex items-center justify-between shadow-xs">
+<div>
+<span class="font-label-code text-[11px] uppercase text-on-surface-variant block">Calculated Gross Profit</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-emerald-600">+$41.49 / unit</span>
+</div>
+<div class="text-right">
+<span class="font-label-code text-[11px] uppercase text-on-surface-variant block">Margin %</span>
+<span class="font-label-numeric-lg text-label-numeric-lg font-bold text-emerald-700">41.5%</span>
+</div>
+</div>
+<!-- Tax Tier Selection -->
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Applied Tax Category</label>
+<div class="relative">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option selected="">Standard Electronics Tax (8.25%)</option>
+<option>Reduced State Tech Rate (4.5%)</option>
+<option>Tax Exempt Wholesale (0.0%)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Stock & Multi-Location Inventory -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md shadow-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">warehouse</span>
+                Stock &amp; Shelf Tracking
+              </span>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Current Stock</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-bold text-on-surface outline-none focus:ring-2 focus:ring-primary" type="number" value="14"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Reorder Alert At</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest font-label-numeric-md text-label-numeric-md font-semibold text-on-surface outline-none focus:ring-2 focus:ring-primary" type="number" value="5"/>
+</div>
+</div>
+<!-- Warehouse Bin / Shelf -->
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm font-semibold text-on-surface">Store Location / Bin</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">shelves</span>
+<input class="w-full pl-10 pr-3 py-2 rounded-lg bg-surface-container-lowest font-label-code text-label-code font-medium text-on-surface outline-none focus:ring-2 focus:ring-primary" type="text" value="Aisle 3 - Bin C-12"/>
+</div>
+</div>
+<!-- POS Quick Scanning Toggle -->
+<div class="pt-2 flex items-center justify-between">
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Cashier Quick-Add Grid</span>
+<span class="font-label-code text-[11px] text-on-surface-variant">Display on POS terminal speed dial</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-xl py-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+<span>All required fields are validated</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-xs font-body-sm text-body-sm font-semibold transition-colors" id="cancelModalBtn" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-semibold transition-colors" type="button">
+            Save as Draft
+          </button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary shadow-md font-headline-sm text-headline-sm font-semibold transition-all" id="saveProductBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+            Save &amp; Publish Product
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const modal = document.getElementById('productModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+    const saveBtn = document.getElementById('saveProductBtn');
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function openModal() {
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function() {
+        // Visual confirmation feedback
+        const originalText = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span> Saved!';
+        saveBtn.classList.add('bg-emerald-600');
+        setTimeout(() => {
+          saveBtn.innerHTML = originalText;
+          saveBtn.classList.remove('bg-emerald-600');
+          closeModal();
+        }, 600);
+      });
+    }
+  })();
+</script></main></div></body></html>
