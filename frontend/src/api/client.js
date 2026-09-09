@@ -2,7 +2,14 @@ import axios from 'axios';
 
 // Base URL for the GadgetPOS FastAPI backend. Per API_REFERENCE.md, every
 // endpoint except /api/auth/login and /api/health requires a bearer token.
-export const API_BASE_URL = 'http://localhost:8000';
+//
+// Reads VITE_API_BASE_URL at build time (Vite bakes import.meta.env.VITE_*
+// values into the build, so this is resolved when `npm run build` runs, not
+// at runtime in the browser). Set VITE_API_BASE_URL as an environment
+// variable on Netlify to point production at the deployed Render backend;
+// leave it unset locally and this falls back to localhost so `npm run dev`
+// keeps working against your local backend with zero extra setup.
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
