@@ -14,11 +14,17 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 8  # 8 hour shift-length session
 # --- Database ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(BASE_DIR, "gadgetpos.db")
-DATABASE_URL = f"sqlite:///{DB_PATH}"
+
+# If a DATABASE_URL environment variable is set (e.g. a Supabase Postgres
+# connection string), use it. Otherwise fall back to the local SQLite file
+# so `python seed.py` + `uvicorn` still just work for local dev with zero
+# extra setup. Set DATABASE_URL to switch this same code to Postgres --
+# no code changes needed, just the environment.
+DATABASE_URL = os.environ.get("DATABASE_URL", f"sqlite:///{DB_PATH}")
 
 # --- Business rules ---
 DEFAULT_TAX_RATE = 0.0825  # 8.25%, matches the Stitch UI mock (Section 13 reporting / Apply Tax use case)
-CURRENCY_SYMBOL = "K"  # Zambian Kwacha (ZMW)
+CURRENCY_SYMBOL = "$"
 
 # --- External API integration mode ---
 # All three external integrations (Flutterwave, Africa's Talking, Mailgun) run in MOCK mode
